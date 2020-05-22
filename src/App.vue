@@ -1,29 +1,43 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <!-- <router-link to="/">Home</router-link> -->
-    </div>
+    <BaseNavBar
+      :text="navBarHeader"
+      :routes="navBarRoutes"
+    />
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<script>
+import BaseNavBar from "@/components/BaseNavBar.vue";
 
-#nav {
-  // padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  name: "App",
+  components: {
+    BaseNavBar
+  },
+  data() {
+    return {
+      navBarHeader: "Video Tutorials",
+      navBarRoutes: [
+        {
+          text: "Home",
+          to: "/",
+        },
+        {
+          text: "Login",
+          to: "/login",
+        },
+        {
+          text: "Register",
+          to: "/register",
+        },
+      ],
+    };
   }
-}
+};
+</script>
+
+<style lang="sass">
+@import "@/assets/styles/main.sass"
 </style>
