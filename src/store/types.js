@@ -1,5 +1,7 @@
 // TYPES_NODE
-// export const BEERS_ARRAY = "store/BEERS_ARRAY";
+export const IS_USER_LOGGED_IN = "store/IS_USER_LOGGED_IN";
+export const IS_ADMIN_LOGGED_IN = "store/IS_ADMIN_LOGGED_IN";
 
 // ACTIONS_NODE
-// export const ACTION_BEERS_ARRAY = "store/ACTION_BEERS_ARRAY";
+export const ACTION_IS_USER_LOGGED_IN = "store/ACTION_IS_USER_LOGGED_IN";
+export const ACTION_IS_ADMIN_LOGGED_IN = "store/ACTION_IS_ADMIN_LOGGED_IN";
