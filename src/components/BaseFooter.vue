@@ -1,6 +1,5 @@
 <template>
   <div class="footer">{{text}}<a class="fotter-link">{{link}}</a></div>
-  
 </template>
 
 <script>
