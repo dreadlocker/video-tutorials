@@ -56,6 +56,7 @@ export default new Vuex.Store({
         usersEnrolled: 3
       },
     ],
+    users: []
   },
   mutations: {
     [types.IS_USER_LOGGED_IN]: (state, payload) => {
@@ -64,6 +65,9 @@ export default new Vuex.Store({
     [types.IS_ADMIN_LOGGED_IN]: (state, payload) => {
       state.is_admin_logged_In = payload;
     },
+    [types.ADD_USER]: (state, payload) => {
+      state.users.push(payload);
+    },
   },
   actions: {
     [types.ACTION_IS_USER_LOGGED_IN]({ commit }, payload) {
@@ -71,6 +75,9 @@ export default new Vuex.Store({
     },
     [types.ACTION_IS_ADMIN_LOGGED_IN]({ commit }, payload) {
       commit(types.IS_ADMIN_LOGGED_IN, payload);
+    },
+    [types.ACTION_ADD_USER]({ commit }, payload) {
+      commit(types.ADD_USER, payload);
     },
   },
 });
