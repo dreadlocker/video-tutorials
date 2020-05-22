@@ -1,11 +1,11 @@
 <template>
   <div>
-    asd
+    CreateCoursePage
   </div>
 </template>
 
 <script>
 export default {
-  name: "asd"
+  name: "CreateCoursePage"
 };
 </script>
