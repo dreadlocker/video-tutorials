@@ -4,17 +4,25 @@
       :text="navBarHeader"
       :routes="navBarRoutes"
     />
+
     <router-view/>
+    
+    <BaseFooter
+      :text="footerText"
+      :link="footerLink"
+    />
   </div>
 </template>
 
 <script>
 import BaseNavBar from "@/components/BaseNavBar.vue";
+import BaseFooter from "@/components/BaseFooter.vue";
 
 export default {
   name: "App",
   components: {
-    BaseNavBar
+    BaseNavBar,
+    BaseFooter,
   },
   data() {
     return {
@@ -33,6 +41,8 @@ export default {
           to: "/register",
         },
       ],
+      footerText: "© 2019 ",
+      footerLink: "Express Fundamentals",
     };
   }
 };
