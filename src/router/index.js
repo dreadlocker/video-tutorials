@@ -50,6 +50,11 @@ const routes = [
     name: "LecturePanel",
     component: () => import("@/views/Lecture_Panel/LecturePanelPage.vue")
   },
+  {
+    path: "*",
+    name: "ErrorRoute",
+    redirect: "/"
+  },
 ];
 
 const router = new VueRouter({
