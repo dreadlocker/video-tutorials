@@ -1,3 +1,5 @@
+@import "./_variables.sass"
+
 body
   margin: 0
 
@@ -11,7 +13,7 @@ body
   justify-content: space-between
   font-size: 20px
   padding: 20px 10px
-  background-color: #e3e3e3
+  background-color: $background-color-1
 .nav-bar-link
   margin-right: 15px
   color: gray
@@ -20,8 +22,48 @@ body
     margin-right: 0
 
 .page-content
-  margin: 20px 5px
   text-align: center
+
+.home-page-header-holder
+  background-color: $background-color-2
+  padding: 40px 10px
+  text-align: left
+.home-page-header
+  margin: 0
+  line-height: 30px
+
+.content
+  width: calc( #{$course-holder-width + 20px} * 3 )
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  margin: 0 auto 20px
+
+.course-holder
+  width: $course-holder-width
+  height: $course-holder-height
+  border: 1px solid gray
+.course-image
+  width: 200px
+  height: 200px
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $background-color-1
+.course-info
+  height: $course-info-height
+  display: flex
+  flex-direction: column
+  justify-content: space-evenly
+  padding: $course-info-padding
+  text-align: left
+.course-button-holder
+  width: calc( #{$course-image-height} - #{$course-info-padding * 2} )
+  background-color: $background-color-2
+  padding: $course-info-padding
+  border: 1px solid gray
+  text-align: left
+
 
 
 
