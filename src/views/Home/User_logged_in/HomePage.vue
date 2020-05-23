@@ -1,6 +1,9 @@
 <template>
   <div>
-    <BaseHeading :text="contentHeaderText" />
+    <BaseHeading
+      :text="contentHeaderText"
+      :classes="headingClasses"
+    />
     <!-- TODO CoursesSearch FUNCTIONALITY NOT DONE -->
     <CoursesSearch
       :input="input"
@@ -45,6 +48,7 @@ export default {
   },
   data() {
     return {
+      headingClasses: "text-align-center",
       contentHeaderText: "Courses",
       coursesButton: {
         type: "button",

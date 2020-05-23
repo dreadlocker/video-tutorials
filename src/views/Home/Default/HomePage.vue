@@ -5,7 +5,10 @@
       :info="headerInfo"
     />
 
-    <BaseHeading :text="contentHeaderText" />
+    <BaseHeading
+      :text="contentHeaderText"
+      :classes="headingClasses"
+    />
 
     <div class="content">
       <BaseCourseWindow
@@ -42,6 +45,7 @@ export default {
   },
   data() {
     return {
+      headingClasses: "text-align-center",
       headerText: "Video Tutorials",
       headerInfo: "Start Self-Study Today: It'll Change Your Life",
       contentHeaderText: "Top Courses",
