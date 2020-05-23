@@ -26,9 +26,14 @@ const routes = [
     component: () => import("@/views/All_Courses/AllCoursesPage.vue")
   },
   {
-    path: "/course-details",
+    path: "/course-details/:id",
     name: "CourseDetails",
-    component: () => import("@/views/Course_Details/CourseDetailsPage.vue")
+    children: [
+      {
+        path: "id",
+        component: () => import("@/views/Course_Details/CourseDetailsPage.vue"),
+      }
+    ]
   },
   {
     path: "/play-video",
