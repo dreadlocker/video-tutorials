@@ -1,10 +1,12 @@
 <template>
   <div class="nav-bar">
     <div>{{text}}</div>
+
     <div>
       <router-link
         v-for="route in routes"
-        :key="route.to"
+        :key="route.text"
+        @click.native="route.onClick ? route.onClick() : ''"
         :to="route.to"
         class="nav-bar-link"
       >{{route.text}}</router-link>
