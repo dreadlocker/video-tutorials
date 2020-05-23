@@ -19,6 +19,7 @@
       <BaseButton
         :button="button"
         :onClick="onClick"
+        :courseId="course.id"
       />
     </div>
   </div>
