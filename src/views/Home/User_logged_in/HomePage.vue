@@ -67,8 +67,8 @@ export default {
     courseSearch() {
       // console.log("courseSearch");
     },
-    showCourse() {
-      // console.log("showCourse");
+    showCourse(courseId) {
+      this.$router.push(`/course-details/${courseId}`);
     },
   }
 };
