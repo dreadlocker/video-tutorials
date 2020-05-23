@@ -6,19 +6,22 @@ import store from "./store";
 Vue.config.productionTip = false;
 
 const allowedRoutes = ["Home", "Login", "Register"];
-const userRoutes = ["AllCourses", "CourseDetails", "PlayVideo"];
-const adminRoutes = ["CreateCourse", "EditCourse", "LecturePanel"];
+const userRoutes = ["Home", "AllCourses", "CourseDetails", "PlayVideo"];
+const adminRoutes = ["Home", "CreateCourse", "EditCourse", "LecturePanel"];
 
 router.beforeEach((to, from, next) => {
-  const isAllowed = allowedRoutes.some(routeName => routeName === to.name);
-  if(isAllowed) return next();
+  const isNooneLogged = 
+    allowedRoutes.some(routeName => routeName === to.name)
+    && !(store.state.is_user_logged_in)
+    && !(store.state.is_admin_logged_In);
+  if(isNooneLogged) return next();
   
   // TODO PlayVideo -	Users (logged in and enrolled in the course) 
-  const user = userRoutes.some(routeName => routeName === to.name) && store.state.isUserLoggedIn;
-  if(user) return next();
+  const isUserLogged = userRoutes.some(routeName => routeName === to.name) && store.state.is_user_logged_in;
+  if(isUserLogged) return next();
 
-  const admin = adminRoutes.some(routeName => routeName === to.name) && store.state.isAdminLoggedIn;
-  if(admin) return next();
+  const isAdminLogged = adminRoutes.some(routeName => routeName === to.name) && store.state.is_admin_logged_In;
+  if(isAdminLogged) return next();
 
   next(from.path);
 });
