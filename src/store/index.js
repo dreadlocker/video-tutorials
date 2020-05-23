@@ -56,7 +56,8 @@ export default new Vuex.Store({
         usersEnrolled: 3
       },
     ],
-    users: []
+    users: [],
+    current_user: {}, // pri klik na Logout da go resetvam
   },
   mutations: {
     [types.IS_USER_LOGGED_IN]: (state, payload) => {
@@ -68,6 +69,9 @@ export default new Vuex.Store({
     [types.ADD_USER]: (state, payload) => {
       state.users.push(payload);
     },
+    [types.CURRENT_USER]: (state, payload) => {
+      state.current_user = payload;
+    },
   },
   actions: {
     [types.ACTION_IS_USER_LOGGED_IN]({ commit }, payload) {
@@ -78,6 +82,9 @@ export default new Vuex.Store({
     },
     [types.ACTION_ADD_USER]({ commit }, payload) {
       commit(types.ADD_USER, payload);
+    },
+    [types.ACTION_CURRENT_USER]({ commit }, payload) {
+      commit(types.CURRENT_USER, payload);
     },
   },
 });
