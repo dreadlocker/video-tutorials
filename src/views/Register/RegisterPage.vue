@@ -18,6 +18,7 @@ import { mapState, mapActions } from "vuex";
 import {
   ACTION_ADD_USER,
   ACTION_IS_USER_LOGGED_IN,
+  ACTION_CURRENT_USER,
 } from "@/store/types.js";
 import BaseInput from "@/components/BaseInput.vue";
 import BaseButton from "@/components/BaseButton.vue";
@@ -66,6 +67,7 @@ export default {
     ...mapActions({
       action_add_user: ACTION_ADD_USER,
       action_is_user_logged_in: ACTION_IS_USER_LOGGED_IN,
+      action_current_user: ACTION_CURRENT_USER,
     }),
     registerUser() {
       const password = this.inputs.find(input => input.label === "Password").value;
@@ -76,13 +78,15 @@ export default {
       const userFound = this.users.find(user => user.username === username);
       if(userFound) return;
 
+      const coursesId = [];
       const user = {
-        username: username,
-        password: password,
-        coursesId: [],
+        username,
+        password,
+        coursesId,
       };
-      this.action_add_user(user);
       this.action_is_user_logged_in(true);
+      this.action_current_user({username, coursesId});
+      this.action_add_user(user);
       this.$router.push({name: "Home"});
     }
   }
