@@ -17,8 +17,13 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 import BaseNavBar from "@/components/BaseNavBar.vue";
 import BaseFooter from "@/components/BaseFooter.vue";
+import {
+  ACTION_IS_USER_LOGGED_IN,
+  ACTION_CURRENT_USER,
+} from "@/store/types.js";
 
 export default {
   name: "App",
@@ -26,26 +31,62 @@ export default {
     BaseNavBar,
     BaseFooter,
   },
-  data() {
-    return {
-      navBarHeader: "Video Tutorials",
-      navBarRoutes: [
+  computed: {
+    ...mapState({
+      current_user: state => state.current_user,
+    }),
+    navBarRoutes() {
+      const noCurrentUser = Object.keys(this.current_user).length === 0;
+      if (noCurrentUser) {
+        return [
+          {
+            text: "Home",
+            to: "/",
+          },
+          {
+            text: "Login",
+            to: "/login",
+          },
+          {
+            text: "Register",
+            to: "/register",
+          },
+        ];
+      }
+      
+      return [
         {
           text: "Home",
           to: "/",
         },
         {
-          text: "Login",
-          to: "/login",
+          text: `Welcome, ${this.current_user.username}`,
+          to: "/",
         },
         {
-          text: "Register",
-          to: "/register",
+          text: "Logout",
+          to: "/",
+          onClick: this.logout,
         },
-      ],
+      ];
+    }
+  },
+  data() {
+    return {
+      navBarHeader: "Video Tutorials",
       footerText: "© 2019 ",
       footerLink: "Express Fundamentals",
     };
+  },
+  methods: {
+    ...mapActions({
+      action_is_user_logged_in: ACTION_IS_USER_LOGGED_IN,
+      action_current_user: ACTION_CURRENT_USER,
+    }),
+    logout() {
+      this.action_is_user_logged_in(false);
+      this.action_current_user({});
+    }
   }
 };
 </script>
