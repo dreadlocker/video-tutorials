@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{text}}</h1>
+    <h1 :class="classes">{{text}}</h1>
   </div>
 </template>
 
@@ -9,6 +9,10 @@ export default {
   name: "BaseHeading",
   props: {
     text: {
+      type: String,
+      required: true
+    },
+    classes: {
       type: String,
       required: true
     },
