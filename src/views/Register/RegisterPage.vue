@@ -4,6 +4,7 @@
       v-for="input in inputs"
       :key="input.label"
       :input="input"
+      :labelClasses="labelClasses"
     />
 
     <BaseButton
@@ -61,6 +62,7 @@ export default {
           value: "",
         },
       ],
+      labelClasses: "label",
     };
   },
   methods: {
