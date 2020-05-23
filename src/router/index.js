@@ -29,6 +29,7 @@ const routes = [
     path: "/course-details/:id",
     name: "CourseDetails",
     children: [
+      // TODO MOJE LI DA SE VLIZA NA NESTNATITE ROUTES PRI LOGGED IN I LOGGED OUT
       {
         path: "id",
         component: () => import("@/views/Course_Details/CourseDetailsPage.vue"),
