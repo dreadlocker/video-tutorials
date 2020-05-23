@@ -1,17 +1,20 @@
 <template>
   <div>
-    <Default v-if="!is_user_logged_in && !is_admin_logged_In" />
+    <DefaultHomePage v-if="!is_user_logged_in && !is_admin_logged_In" />
+    <UserHomePage v-if="is_user_logged_in && !is_admin_logged_In" />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import Default from "./Default/Default.vue";
+import DefaultHomePage from "./Default/HomePage.vue";
+import UserHomePage from "./User_logged_in/HomePage.vue";
 
 export default {
   name: "HomePage",
   components: {
-    Default,
+    DefaultHomePage,
+    UserHomePage,
   },
   computed: {
     ...mapState({
