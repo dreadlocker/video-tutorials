@@ -10,6 +10,7 @@ export default new Vuex.Store({
   // modules: {
   // }
   state: {
+    // TODO MAI MOGA BEZ DOLNITE 2, VMESTO TQH TRQBVA DA PROVERQVAM Object.keys(this.current_user).length > 0;
     is_user_logged_in: false,
     is_admin_logged_In: false,
     courses: [

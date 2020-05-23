@@ -9,6 +9,7 @@ const allowedRoutes = ["Home", "Login", "Register"];
 const userRoutes = ["Home", "AllCourses", "CourseDetails", "PlayVideo"];
 const adminRoutes = ["Home", "CreateCourse", "EditCourse", "LecturePanel"];
 
+// TODO DA PROVERQ DO KOI ROUTES MOJE DA SE STIGA KOGATO NIKOI NE E LOGNAT, KOGATO USER E LOGNAT I KOGATO ADMIN E LOGNAT
 router.beforeEach((to, from, next) => {
   const isNooneLogged = 
     allowedRoutes.some(routeName => routeName === to.name)
