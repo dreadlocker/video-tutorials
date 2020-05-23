@@ -1,6 +1,6 @@
 <template>
   <div>
-    <DefaultHeader
+    <HomePageHeader
       :header="headerText"
       :info="headerInfo"
     />
@@ -12,17 +12,7 @@
         v-for="course in coursesSorted"
         :key="course.id"
         :course="course"
-        :button="coursesButtonText"
       />
-
-      <!-- When user is logged in -->
-      <!-- <div
-        v-for="course in coursesSorted"
-        :key="course.id"
-        class="course-button-holder"
-      >
-        <button :type="coursesButtonText.type">{{coursesButtonText.text}}</button>
-      </div> -->
     </div>
 
   </div>
@@ -30,14 +20,14 @@
 
 <script>
 import { mapState } from "vuex";
-import DefaultHeader from "./DefaultHeader.vue";
+import HomePageHeader from "./HomePageHeader.vue";
 import BaseHeading from "@/components/BaseHeading.vue";
 import BaseCourseWindow from "@/components/BaseCourseWindow.vue";
 
 export default {
-  name: "Default",
+  name: "HomePage",
   components: {
-    DefaultHeader,
+    HomePageHeader,
     BaseHeading,
     BaseCourseWindow,
   },
@@ -55,10 +45,6 @@ export default {
       headerText: "Video Tutorials",
       headerInfo: "Start Self-Study Today: It'll Change Your Life",
       contentHeaderText: "Top Courses",
-      coursesButtonText: {
-        type: "button",
-        text: "Details",
-      },
     };
   },
 };

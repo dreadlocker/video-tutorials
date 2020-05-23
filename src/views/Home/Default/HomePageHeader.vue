@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "DefaultHeader",
+  name: "HomePageHeader",
   props: {
     header: {
       type: String,
