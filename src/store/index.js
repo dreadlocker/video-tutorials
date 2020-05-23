@@ -67,8 +67,8 @@ export default new Vuex.Store({
     [types.IS_ADMIN_LOGGED_IN]: (state, payload) => {
       state.is_admin_logged_In = payload;
     },
-    [types.ADD_USER]: (state, payload) => {
-      state.users.push(payload);
+    [types.SAVE_USERS]: (state, payload) => {
+      state.users = payload;
     },
     [types.CURRENT_USER]: (state, payload) => {
       state.current_user = payload;
@@ -81,8 +81,8 @@ export default new Vuex.Store({
     [types.ACTION_IS_ADMIN_LOGGED_IN]({ commit }, payload) {
       commit(types.IS_ADMIN_LOGGED_IN, payload);
     },
-    [types.ACTION_ADD_USER]({ commit }, payload) {
-      commit(types.ADD_USER, payload);
+    [types.ACTION_SAVE_USERS]({ commit }, payload) {
+      commit(types.SAVE_USERS, payload);
     },
     [types.ACTION_CURRENT_USER]({ commit }, payload) {
       commit(types.CURRENT_USER, payload);
