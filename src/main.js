@@ -6,7 +6,7 @@ import store from "./store";
 Vue.config.productionTip = false;
 
 const allowedRoutes = ["Home", "Login", "Register"];
-const userRoutes = ["Home", "AllCourses", "CourseDetails", "PlayVideo"];
+const userRoutes = ["Home", "CourseDetails", "PlayVideo"];
 const adminRoutes = ["Home", "CreateCourse", "EditCourse", "LecturePanel"];
 
 // TODO DA PROVERQ DO KOI ROUTES MOJE DA SE STIGA KOGATO NIKOI NE E LOGNAT, KOGATO USER E LOGNAT I KOGATO ADMIN E LOGNAT
@@ -19,6 +19,12 @@ router.beforeEach((to, from, next) => {
   
   // TODO PlayVideo -	Users (logged in and enrolled in the course) 
   const isUserLogged = userRoutes.some(routeName => routeName === to.name) && store.state.is_user_logged_in;
+  if (to.path.includes("/course-details/")) {
+    const courseId = Number(to.params.id);
+    const courses = store.state.courses;
+    const course = courses.find(course => course.id === courseId);
+    if (course === undefined) return next(from.path);
+  }
   if(isUserLogged) return next();
 
   const isAdminLogged = adminRoutes.some(routeName => routeName === to.name) && store.state.is_admin_logged_In;
