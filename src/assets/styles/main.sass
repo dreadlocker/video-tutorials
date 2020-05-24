@@ -109,7 +109,6 @@ body
   align-self: flex-end
   background-color: gray
   color: white
-  border-radius: 3px
   border: 0
 
 .lecture-video
@@ -121,6 +120,25 @@ body
   display: flex
   justify-content: center
   align-items: center
+
+.admin-courses-holder
+  width: 600px
+  margin: 0 auto
+.admin-course-holder
+  height: 40px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border: 1px solid $background-color-1
+  padding: 0 10px
+.lectures-in-course
+  margin: 0 10px
+.lectures-count
+  color: white
+  background-color: blue
+  border-radius: 50%
+  padding: 3px 8px
+
 
 
 
@@ -142,8 +160,23 @@ body
 
 .btn
   cursor: pointer
+  border-radius: 3px
+  border: 0
+  padding: 3px 8px
   &:active
     transform: scale(1.1)
+.primary
+  color: white
+  background-color: #4f72a7
+.warning
+  background-color: #eab106
+.success
+  color: white
+  background-color: #417c41
+
+
+
+
 .text-align-center
   text-align: center
 .text-align-left
