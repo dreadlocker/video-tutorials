@@ -18,7 +18,6 @@
 import { mapState, mapActions } from "vuex";
 import {
   ACTION_SAVE_USERS,
-  ACTION_IS_USER_LOGGED_IN,
   ACTION_CURRENT_USER,
 } from "@/store/types.js";
 import BaseInput from "@/components/BaseInput.vue";
@@ -68,7 +67,6 @@ export default {
   methods: {
     ...mapActions({
       action_save_users: ACTION_SAVE_USERS,
-      action_is_user_logged_in: ACTION_IS_USER_LOGGED_IN,
       action_current_user: ACTION_CURRENT_USER,
     }),
     registerUser() {
@@ -89,7 +87,6 @@ export default {
       const usersCopy = this.users.map(user => user);
       usersCopy.push(user);
 
-      this.action_is_user_logged_in(true);
       this.action_current_user({username, courses});
       this.action_save_users(usersCopy);
       this.$router.push({name: "Home"});

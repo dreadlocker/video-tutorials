@@ -18,7 +18,6 @@
 // TODO AKO USER VE4E E LOGNAT, DA NE MOJE DA SE DOSTUPVA TAZI STRANICA
 import { mapState, mapActions } from "vuex";
 import {
-  ACTION_IS_USER_LOGGED_IN,
   ACTION_CURRENT_USER,
 } from "@/store/types.js";
 import BaseInput from "@/components/BaseInput.vue";
@@ -61,7 +60,6 @@ export default {
   },
   methods: {
     ...mapActions({
-      action_is_user_logged_in: ACTION_IS_USER_LOGGED_IN,
       action_current_user: ACTION_CURRENT_USER,
     }),
     logginUser() {
@@ -71,7 +69,6 @@ export default {
       if(userFound === undefined) return;
 
       const courses = this.users.find(user => user.username === username).courses;
-      this.action_is_user_logged_in(true);
       this.action_current_user({username, courses});
       this.$router.push({name: "Home"});
     }
