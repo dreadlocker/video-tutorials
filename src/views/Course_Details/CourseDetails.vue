@@ -24,7 +24,7 @@
     <h3 v-else>{{lecturesListText}}</h3>
 
     <div v-if="!userNotEnrolled">
-      <LectureDetails
+      <BaseLectureDetails
         v-for="lecture in lectures"
         :key="lecture.id"
         :lecture="lecture"
@@ -38,10 +38,15 @@
 <script>
 import BaseHeading from "@/components/BaseHeading.vue";
 import BaseButton from "@/components/BaseButton.vue";
-import LectureDetails from "./LectureDetails.vue";
+import BaseLectureDetails from "@/components/BaseLectureDetails.vue";
 
 export default {
   name: "CourseDetails",
+  components: {
+    BaseHeading,
+    BaseButton,
+    BaseLectureDetails,
+  },
   props: {
     currentCourse: {
       type: Object,
@@ -91,11 +96,6 @@ export default {
       type: Function,
       required: true,
     },
-  },
-  components: {
-    BaseHeading,
-    BaseButton,
-    LectureDetails,
   },
 };
 </script>

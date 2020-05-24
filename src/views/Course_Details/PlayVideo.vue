@@ -7,7 +7,7 @@
 
     <div class="lecture-video">{{lecture.videoLink}}</div>
     <h3>Lectures List</h3>
-    <LectureDetails
+    <BaseLectureDetails
       v-for="lecture in lectures"
       :key="lecture.id"
       :lecture="lecture"
@@ -19,13 +19,13 @@
 
 <script>
 import BaseHeading from "@/components/BaseHeading.vue";
-import LectureDetails from "./LectureDetails.vue";
+import BaseLectureDetails from "@/components/BaseLectureDetails.vue";
 
 export default {
   name: "PlayVideo",
   components: {
     BaseHeading,
-    LectureDetails,
+    BaseLectureDetails,
   },
   props: {
     lectures: {
