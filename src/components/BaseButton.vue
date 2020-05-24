@@ -1,6 +1,6 @@
 <template>
   <button
-    @click="onClick(courseId)"
+    @click="onClick(argument)"
     :type="button.type"
     :class="button.classes"
     class="btn"
@@ -19,8 +19,8 @@ export default {
       type: Function,
       required: true
     },
-    courseId: {
-      type: Number,
+    argument: {
+      type: [Number, Object],
     },
   },
 };
