@@ -35,6 +35,11 @@ export default new Vuex.Store({
             name: "React Lecture 3",
             videoLink: "React Video link 3",
           },
+          {
+            id: 4,
+            name: "React Lecture 4",
+            videoLink: "React Video link 4",
+          },
         ],
         usersEnrolled: 2
       },
@@ -107,6 +112,16 @@ export default new Vuex.Store({
             name: "Sprint Lecture 3",
             videoLink: "Sprint Video link 3",
           },
+          {
+            id: 4,
+            name: "Sprint Lecture 4",
+            videoLink: "Sprint Video link 4",
+          },
+          {
+            id: 5,
+            name: "Sprint Lecture 5",
+            videoLink: "Sprint Video link 5",
+          },
         ],
         usersEnrolled: 0
       },
@@ -159,7 +174,12 @@ export default new Vuex.Store({
         usersEnrolled: 3
       },
     ],
-    users: [],
+    users: [
+      {
+        username: "Admin",
+        password: "a",
+      }
+    ],
     current_user: {}, // pri klik na Logout da go resetvam
   },
   mutations: {
