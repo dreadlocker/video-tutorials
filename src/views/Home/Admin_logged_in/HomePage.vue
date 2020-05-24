@@ -4,16 +4,9 @@
       :button="createCourseButton"
       :onClick="createCourse"
     />
-      <!-- :argument="course.id" -->
 
     <BaseHeading
-      v-if="haveCourses"
-      :text="contentHeaderText"
-      :classes="headingClasses"
-    />
-    <BaseHeading
-      v-else
-      :text="noCoursesText"
+      :text="headingText"
       :classes="headingClasses"
     />
 
@@ -51,12 +44,13 @@ export default {
     }),
     haveCourses() {
       return this.public_courses.length > 0;
+    },
+    headingText() {
+      return this.haveCourses ? "Choose Course" : "No courses in database. Please create one!";
     }
   },
   data() {
     return {
-      contentHeaderText: "Choose Course",
-      noCoursesText: "No courses in database. Please create one!",
       headingClasses: "text-align-center",
       createCourseButton: {
         type: "button",
