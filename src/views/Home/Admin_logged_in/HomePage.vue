@@ -7,11 +7,17 @@
       <!-- :argument="course.id" -->
 
     <BaseHeading
+      v-if="haveCourses"
       :text="contentHeaderText"
       :classes="headingClasses"
     />
+    <BaseHeading
+      v-else
+      :text="noCoursesText"
+      :classes="headingClasses"
+    />
 
-    <div class="admin-courses-holder">
+    <div v-if="haveCourses" class="admin-courses-holder">
       <Course
         v-for="course in courses"
         :key="course.id"
@@ -43,15 +49,15 @@ export default {
     ...mapState({
       courses: state => state.courses,
     }),
-    coursesSorted() {
-      const coursesCopy = [...this.courses];
-      return coursesCopy.sort((a, b) => b.usersEnrolled - a.usersEnrolled).slice(0, 3);
+    haveCourses() {
+      return this.courses.length > 0;
     }
   },
   data() {
     return {
-      headingClasses: "text-align-center",
       contentHeaderText: "Choose Course",
+      headingClasses: "text-align-center",
+      noCoursesText: "No courses in database. Please create one!",
       createCourseButton: {
         type: "button",
         classes: "primary",
