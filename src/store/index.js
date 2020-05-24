@@ -10,15 +10,13 @@ export default new Vuex.Store({
   // modules: {
   // }
   state: {
-    // TODO MAI MOGA BEZ DOLNITE 2, VMESTO TQH TRQBVA DA PROVERQVAM Object.keys(this.current_user).length > 0;
-    is_user_logged_in: false,
-    is_admin_logged_In: false,
     public_courses: [
       {
         id: 1,
         imageUrl: "",
         title: "React",
         description: "Lorem Ipsum",
+        usersEnrolled: 2,
         lectures: [
           {
             id: 1,
@@ -41,13 +39,13 @@ export default new Vuex.Store({
             videoLink: "React Video link 4",
           },
         ],
-        usersEnrolled: 2
       },
       {
         id: 4,
         imageUrl: "",
         title: "Angular",
         description: "Lorem Ipsum",
+        usersEnrolled: 1,
         lectures: [
           {
             id: 1,
@@ -65,13 +63,13 @@ export default new Vuex.Store({
             videoLink: "Angular Video link 3",
           },
         ],
-        usersEnrolled: 1
       },
       {
         id: 3,
         imageUrl: "",
         title: "Symfony",
         description: "Lorem Ipsum",
+        usersEnrolled: 0,
         lectures: [
           {
             id: 1,
@@ -89,13 +87,13 @@ export default new Vuex.Store({
             videoLink: "Symfony Video link 3",
           },
         ],
-        usersEnrolled: 0
       },
       {
         id: 5,
         imageUrl: "",
         title: "Sprint MVC",
         description: "Lorem Ipsum",
+        usersEnrolled: 0,
         lectures: [
           {
             id: 1,
@@ -123,13 +121,13 @@ export default new Vuex.Store({
             videoLink: "Sprint Video link 5",
           },
         ],
-        usersEnrolled: 0
       },
       {
         id: 2,
         imageUrl: "",
         title: "ASP .NET",
         description: "Lorem Ipsum",
+        usersEnrolled: 0,
         lectures: [
           {
             id: 1,
@@ -147,13 +145,13 @@ export default new Vuex.Store({
             videoLink: "ASP .NET Video link 3",
           },
         ],
-        usersEnrolled: 0
       },
       {
         id: 6,
         imageUrl: "",
         title: "Express",
         description: "Lorem Ipsum",
+        usersEnrolled: 3,
         lectures: [
           {
             id: 1,
@@ -171,7 +169,6 @@ export default new Vuex.Store({
             videoLink: "Express Video link 3",
           },
         ],
-        usersEnrolled: 3
       },
     ],
     private_courses:[],
@@ -181,15 +178,9 @@ export default new Vuex.Store({
         password: "a",
       }
     ],
-    current_user: {}, // pri klik na Logout da go resetvam
+    current_user: {},
   },
   mutations: {
-    [types.IS_USER_LOGGED_IN]: (state, payload) => {
-      state.is_user_logged_in = payload;
-    },
-    [types.IS_ADMIN_LOGGED_IN]: (state, payload) => {
-      state.is_admin_logged_In = payload;
-    },
     [types.UPDATE_PUBLIC_COURSES]: (state, payload) => {
       state.public_courses = payload;
     },
@@ -204,12 +195,6 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    [types.ACTION_IS_USER_LOGGED_IN]({ commit }, payload) {
-      commit(types.IS_USER_LOGGED_IN, payload);
-    },
-    [types.ACTION_IS_ADMIN_LOGGED_IN]({ commit }, payload) {
-      commit(types.IS_ADMIN_LOGGED_IN, payload);
-    },
     [types.ACTION_UPDATE_PUBLIC_COURSES]({ commit }, payload) {
       commit(types.UPDATE_PUBLIC_COURSES, payload);
     },
