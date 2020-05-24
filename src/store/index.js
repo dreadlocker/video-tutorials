@@ -16,9 +16,9 @@ export default new Vuex.Store({
     courses: [
       {
         id: 1,
-        imageSrc: "",
-        name: "React",
-        info: "Lorem Ipsum",
+        imageUrl: "",
+        title: "React",
+        description: "Lorem Ipsum",
         lectures: [
           {
             id: 1,
@@ -45,9 +45,9 @@ export default new Vuex.Store({
       },
       {
         id: 4,
-        imageSrc: "",
-        name: "Angular",
-        info: "Lorem Ipsum",
+        imageUrl: "",
+        title: "Angular",
+        description: "Lorem Ipsum",
         lectures: [
           {
             id: 1,
@@ -69,9 +69,9 @@ export default new Vuex.Store({
       },
       {
         id: 3,
-        imageSrc: "",
-        name: "Symfony",
-        info: "Lorem Ipsum",
+        imageUrl: "",
+        title: "Symfony",
+        description: "Lorem Ipsum",
         lectures: [
           {
             id: 1,
@@ -93,9 +93,9 @@ export default new Vuex.Store({
       },
       {
         id: 5,
-        imageSrc: "",
-        name: "Sprint MVC",
-        info: "Lorem Ipsum",
+        imageUrl: "",
+        title: "Sprint MVC",
+        description: "Lorem Ipsum",
         lectures: [
           {
             id: 1,
@@ -127,9 +127,9 @@ export default new Vuex.Store({
       },
       {
         id: 2,
-        imageSrc: "",
-        name: "ASP .NET",
-        info: "Lorem Ipsum",
+        imageUrl: "",
+        title: "ASP .NET",
+        description: "Lorem Ipsum",
         lectures: [
           {
             id: 1,
@@ -151,9 +151,9 @@ export default new Vuex.Store({
       },
       {
         id: 6,
-        imageSrc: "",
-        name: "Express",
-        info: "Lorem Ipsum",
+        imageUrl: "",
+        title: "Express",
+        description: "Lorem Ipsum",
         lectures: [
           {
             id: 1,
@@ -174,6 +174,7 @@ export default new Vuex.Store({
         usersEnrolled: 3
       },
     ],
+    private_courses:[],
     users: [
       {
         username: "Admin",
@@ -192,6 +193,9 @@ export default new Vuex.Store({
     [types.UPDATE_COURSES]: (state, payload) => {
       state.courses = payload;
     },
+    [types.UPDATE_PRIVATE_COURSES]: (state, payload) => {
+      state.private_courses = payload;
+    },
     [types.SAVE_USERS]: (state, payload) => {
       state.users = payload;
     },
@@ -208,6 +212,9 @@ export default new Vuex.Store({
     },
     [types.ACTION_UPDATE_COURSES]({ commit }, payload) {
       commit(types.UPDATE_COURSES, payload);
+    },
+    [types.ACTION_UPDATE_PRIVATE_COURSES]({ commit }, payload) {
+      commit(types.UPDATE_PRIVATE_COURSES, payload);
     },
     [types.ACTION_SAVE_USERS]({ commit }, payload) {
       commit(types.SAVE_USERS, payload);
