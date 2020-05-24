@@ -4,10 +4,12 @@
 
     <textarea
       v-if="input.tag === 'textarea'"
+      v-model="input.value"
+      :placeholder="input.placeholder"
       name=""
       id=""
       cols="30"
-      rows="10"
+      rows="3"
     ></textarea>
 
     <input
