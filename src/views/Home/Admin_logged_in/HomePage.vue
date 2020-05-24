@@ -74,8 +74,8 @@ export default {
     createCourse() {
       this.$router.push({name: "CreateCourse"});
     },
-    editCourse() {
-      console.log("editCourse() {");
+    editCourse(course) {
+      this.$router.push({name: "EditCourse", params: course});
     },
     addLecture() {
       console.log("addLecture() {");

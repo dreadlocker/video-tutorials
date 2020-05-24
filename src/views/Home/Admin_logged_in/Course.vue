@@ -5,7 +5,7 @@
       <BaseButton
         :button="editCourseButton"
         :onClick="editCourse"
-        :argument="course.id"
+        :argument="course"
       />
       <BaseButton
         :button="addLectureButton"
