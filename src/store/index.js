@@ -13,7 +13,7 @@ export default new Vuex.Store({
     public_courses: [
       {
         id: 1,
-        imageUrl: "",
+        imageUrl: "React image URL",
         title: "React",
         description: "Lorem Ipsum",
         usersEnrolled: 2,
@@ -42,7 +42,7 @@ export default new Vuex.Store({
       },
       {
         id: 4,
-        imageUrl: "",
+        imageUrl: "Angular image URL",
         title: "Angular",
         description: "Lorem Ipsum",
         usersEnrolled: 1,
@@ -66,7 +66,7 @@ export default new Vuex.Store({
       },
       {
         id: 3,
-        imageUrl: "",
+        imageUrl: "Symfony image URL",
         title: "Symfony",
         description: "Lorem Ipsum",
         usersEnrolled: 0,
@@ -90,7 +90,7 @@ export default new Vuex.Store({
       },
       {
         id: 5,
-        imageUrl: "",
+        imageUrl: "Sprint MVC image URL",
         title: "Sprint MVC",
         description: "Lorem Ipsum",
         usersEnrolled: 0,
@@ -124,7 +124,7 @@ export default new Vuex.Store({
       },
       {
         id: 2,
-        imageUrl: "",
+        imageUrl: "ASP .NET image URL",
         title: "ASP .NET",
         description: "Lorem Ipsum",
         usersEnrolled: 0,
@@ -148,7 +148,7 @@ export default new Vuex.Store({
       },
       {
         id: 6,
-        imageUrl: "",
+        imageUrl: "Express image URL",
         title: "Express",
         description: "Lorem Ipsum",
         usersEnrolled: 3,
