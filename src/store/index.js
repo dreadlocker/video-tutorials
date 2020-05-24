@@ -118,7 +118,7 @@ export default new Vuex.Store({
         lectures: [
           {
             id: 1,
-            nameASP : "ASP .NET Lecture 1",
+            name : "ASP .NET Lecture 1",
             videoLink: "ASP .NET Video link 1",
           },
           {
