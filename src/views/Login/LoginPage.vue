@@ -15,7 +15,6 @@
 </template>
 
 <script>
-// TODO AKO USER VE4E E LOGNAT, DA NE MOJE DA SE DOSTUPVA TAZI STRANICA
 import { mapState, mapActions } from "vuex";
 import {
   ACTION_CURRENT_USER,
