@@ -1,0 +1,35 @@
+<template>
+  <div class="lecture-holder">
+    <h6 class="lecture-name">{{lecture.name}}</h6>
+    <BaseButton
+      :button="button"
+      :onClick="onClick"
+      :argument="lecture"
+    />
+  </div>
+</template>
+
+<script>
+import BaseButton from "@/components/BaseButton.vue";
+
+export default {
+  name: "LectureDetails",
+  components: {
+    BaseButton,
+  },
+  props: {
+    lecture: {
+      type: Object,
+      required: true,
+    },
+    button: {
+      type: Object,
+      required: true,
+    },
+    onClick: {
+      type: Function,
+      required: true,
+    },
+  }
+};
+</script>
