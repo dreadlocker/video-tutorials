@@ -4,7 +4,7 @@
     <BaseButton
       :button="button"
       :onClick="onClick"
-      :argument="lecture"
+      :argument="{course, lecture}"
     />
   </div>
 </template>
@@ -29,6 +29,9 @@ export default {
     onClick: {
       type: Function,
       required: true,
+    },
+    course: {
+      type: Object,
     },
   }
 };

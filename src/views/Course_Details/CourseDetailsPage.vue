@@ -57,7 +57,8 @@ export default {
       return !isUserEnrolled;
     },
     lectures() {
-      return this.currentCourse.lectures;
+      const currentCourse = this.public_courses.find(course => course.id === this.currentCourse.id);
+      return currentCourse.lectures;
     },
     currentLecture() {
       const lectureId = this.$route.query.play;
@@ -109,9 +110,9 @@ export default {
       currentCourse.usersEnrolled += 1;
       this.action_update_public_courses(coursesCopy);
     },
-    playCourse(lecture) {
+    playCourse(courseAndlecture) {
       const currentPath = this.$route.path;
-      this.$router.push({ path: currentPath, query: { play: lecture.id } });
+      this.$router.push({ path: currentPath, query: { play: courseAndlecture.lecture.id } });
     }
   },
   beforeCreate() {
