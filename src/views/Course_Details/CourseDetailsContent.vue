@@ -40,6 +40,7 @@ import { mapState, mapActions } from "vuex";
 import {
   ACTION_SAVE_USERS,
   ACTION_CURRENT_USER,
+  ACTION_UPDATE_COURSES,
 } from "@/store/types.js";
 import BaseHeading from "@/components/BaseHeading.vue";
 import BaseButton from "@/components/BaseButton.vue";
@@ -94,13 +95,23 @@ export default {
     ...mapActions({
       action_save_users: ACTION_SAVE_USERS,
       action_current_user: ACTION_CURRENT_USER,
+      action_update_courses: ACTION_UPDATE_COURSES,
     }),
     enrollCourse() {
       const usersCopy = this.users.map(user => user);
       const userInfo = usersCopy.find(user => user.username === this.current_user.username);
       userInfo.courses.push(this.currentCourse.id);
+      
       this.action_save_users(usersCopy);
       this.action_current_user({username: userInfo.username, courses: userInfo.courses});
+
+      this.updateCourses();
+    },
+    updateCourses() {
+      const coursesCopy = [...this.courses];
+      const currentCourse = coursesCopy.find(course => course.name === this.currentCourse.name);
+      currentCourse.usersEnrolled += 1;
+      this.action_update_courses(coursesCopy);
     },
     playCourse(lecture) {
       console.log(lecture);
