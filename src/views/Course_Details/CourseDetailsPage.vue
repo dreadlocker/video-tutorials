@@ -1,11 +1,16 @@
 <template>
   <div>
-    CourseDetailsPage
+    <CourseDetailsContent />
   </div>
 </template>
 
 <script>
+import CourseDetailsContent from "./CourseDetailsContent.vue";
+
 export default {
-  name: "CourseDetailsPage"
+  name: "CourseDetailsPage",
+  components: {
+    CourseDetailsContent,
+  },
 };
 </script>
