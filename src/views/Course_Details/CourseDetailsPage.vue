@@ -30,7 +30,7 @@ import { mapState, mapActions } from "vuex";
 import {
   ACTION_SAVE_USERS,
   ACTION_CURRENT_USER,
-  ACTION_UPDATE_COURSES,
+  ACTION_UPDATE_PUBLIC_COURSES,
 } from "@/store/types.js";
 import CourseDetails from "./CourseDetails.vue";
 import PlayVideo from "./PlayVideo.vue";
@@ -43,13 +43,13 @@ export default {
   },
   computed: {
     ...mapState({
-      courses: state => state.courses,
+      public_courses: state => state.public_courses,
       current_user: state => state.current_user,
       users: state => state.users,
     }),
     currentCourse() {
       const currentCourseId = Number(this.$route.params.id);
-      return this.courses.find(course => course.id === currentCourseId);
+      return this.public_courses.find(course => course.id === currentCourseId);
     },
     userNotEnrolled() {
       const userCourses = this.current_user.courses;
@@ -91,7 +91,7 @@ export default {
     ...mapActions({
       action_save_users: ACTION_SAVE_USERS,
       action_current_user: ACTION_CURRENT_USER,
-      action_update_courses: ACTION_UPDATE_COURSES,
+      action_update_public_courses: ACTION_UPDATE_PUBLIC_COURSES,
     }),
     enrollCourse() {
       const usersCopy = this.users.map(user => user);
@@ -104,10 +104,10 @@ export default {
       this.updateCourses();
     },
     updateCourses() {
-      const coursesCopy = [...this.courses];
+      const coursesCopy = [...this.public_courses];
       const currentCourse = coursesCopy.find(course => course.title === this.currentCourse.title);
       currentCourse.usersEnrolled += 1;
-      this.action_update_courses(coursesCopy);
+      this.action_update_public_courses(coursesCopy);
     },
     playCourse(lecture) {
       const currentPath = this.$route.path;

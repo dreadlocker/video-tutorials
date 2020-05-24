@@ -36,10 +36,10 @@ export default {
   },
   computed: {
     ...mapState({
-      courses: state => state.courses,
+      public_courses: state => state.public_courses,
     }),
     coursesSorted() {
-      const coursesCopy = [...this.courses];
+      const coursesCopy = [...this.public_courses];
       return coursesCopy.sort((a, b) => b.usersEnrolled - a.usersEnrolled).slice(0, 3);
     }
   },

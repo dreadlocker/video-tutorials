@@ -19,7 +19,7 @@
 
     <div v-if="haveCourses" class="admin-courses-holder">
       <Course
-        v-for="course in courses"
+        v-for="course in public_courses"
         :key="course.id"
         :course="course"
         :editCourseButton="editCourseButton"
@@ -47,17 +47,17 @@ export default {
   },
   computed: {
     ...mapState({
-      courses: state => state.courses,
+      public_courses: state => state.public_courses,
     }),
     haveCourses() {
-      return this.courses.length > 0;
+      return this.public_courses.length > 0;
     }
   },
   data() {
     return {
       contentHeaderText: "Choose Course",
-      headingClasses: "text-align-center",
       noCoursesText: "No courses in database. Please create one!",
+      headingClasses: "text-align-center",
       createCourseButton: {
         type: "button",
         classes: "primary",
@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     createCourse() {
-      console.log("createCourse() {");
+      this.$router.push({name: "CreateCourse"});
     },
     editCourse() {
       console.log("editCourse() {");
