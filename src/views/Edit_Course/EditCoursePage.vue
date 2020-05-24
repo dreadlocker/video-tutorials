@@ -86,7 +86,7 @@ export default {
       if(hasEmptyFields) return;
       
       const publicCoursesCopy = [...this.public_courses];
-      const currentCourse = publicCoursesCopy.find(course => course.title === this.course.title);
+      const currentCourse = publicCoursesCopy.find(course => course.id === this.course.id);
       currentCourse.title = this.inputs[0].value;
       currentCourse.description = this.inputs[1].value;
       currentCourse.imageUrl = this.inputs[2].value;
