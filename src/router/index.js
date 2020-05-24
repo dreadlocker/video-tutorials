@@ -21,16 +21,10 @@ const routes = [
     component: () => import("@/views/Register/RegisterPage.vue")
   },
   {
-    path: "/all-courses",
-    name: "AllCourses",
-    component: () => import("@/views/All_Courses/AllCoursesPage.vue")
-  },
-  {
     path: "/course-details/:id",
     name: "CourseDetails",
     component: () => import("@/views/Course_Details/CourseDetailsPage.vue"),
     children: [
-      // TODO MOJE LI DA SE VLIZA NA NESTNATITE ROUTES PRI LOGGED IN I LOGGED OUT
       {
         path: "id",
         component: () => import("@/views/Course_Details/CourseDetailsContent.vue"),
