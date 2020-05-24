@@ -19,7 +19,6 @@
 <script>
 import { mapState, mapActions } from "vuex";
 import {
-  ACTION_IS_USER_LOGGED_IN,
   ACTION_CURRENT_USER,
 } from "@/store/types.js";
 import BaseNavBar from "@/components/BaseNavBar.vue";
@@ -80,11 +79,9 @@ export default {
   },
   methods: {
     ...mapActions({
-      action_is_user_logged_in: ACTION_IS_USER_LOGGED_IN,
       action_current_user: ACTION_CURRENT_USER,
     }),
     logout() {
-      this.action_is_user_logged_in(false);
       this.action_current_user({});
     }
   }

@@ -108,7 +108,7 @@ export default {
       const lectures = [];
       const usersEnrolled = 0;
 
-      coursesCopy.push({id, title, description, imageUrl, lectures, usersEnrolled});
+      coursesCopy.push({id, title, description, imageUrl, usersEnrolled, lectures});
 
       if(type === "public") this.action_update_public_courses(coursesCopy);
       if(type === "private") this.action_update_private_courses(coursesCopy);
