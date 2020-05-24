@@ -39,7 +39,7 @@ export default {
     return {
       button: {
         type: "button",
-        classes: "",
+        classes: "primary",
         text: "Login",
       },
       inputs: [
