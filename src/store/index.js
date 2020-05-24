@@ -19,6 +19,23 @@ export default new Vuex.Store({
         imageSrc: "",
         name: "React",
         info: "Lorem Ipsum",
+        lectures: [
+          {
+            id: 1,
+            name: "React Lecture 1",
+            videoLink: "Video link 1",
+          },
+          {
+            id: 2,
+            name: "React Lecture 2",
+            videoLink: "Video link 2",
+          },
+          {
+            id: 3,
+            name: "React Lecture 3",
+            videoLink: "React Video link 3",
+          },
+        ],
         usersEnrolled: 2
       },
       {
@@ -26,6 +43,23 @@ export default new Vuex.Store({
         imageSrc: "",
         name: "Angular",
         info: "Lorem Ipsum",
+        lectures: [
+          {
+            id: 1,
+            name: "Angular Lecture 1",
+            videoLink: "Angular Video link 1",
+          },
+          {
+            id: 2,
+            name: "Angular Lecture 2",
+            videoLink: "Angular Video link 2",
+          },
+          {
+            id: 3,
+            name: "Angular Lecture 3",
+            videoLink: "Angular Video link 3",
+          },
+        ],
         usersEnrolled: 1
       },
       {
@@ -33,6 +67,23 @@ export default new Vuex.Store({
         imageSrc: "",
         name: "Symfony",
         info: "Lorem Ipsum",
+        lectures: [
+          {
+            id: 1,
+            name: "Symfony Lecture 1",
+            videoLink: "Symfony Video link 1",
+          },
+          {
+            id: 2,
+            name: "Symfony Lecture 2",
+            videoLink: "Symfony Video link 2",
+          },
+          {
+            id: 3,
+            name: "Symfony Lecture 3",
+            videoLink: "Symfony Video link 3",
+          },
+        ],
         usersEnrolled: 0
       },
       {
@@ -40,6 +91,23 @@ export default new Vuex.Store({
         imageSrc: "",
         name: "Sprint MVC",
         info: "Lorem Ipsum",
+        lectures: [
+          {
+            id: 1,
+            name: "Sprint Lecture 1",
+            videoLink: "Sprint Video link 1",
+          },
+          {
+            id: 2,
+            name: "Sprint Lecture 2",
+            videoLink: "Sprint Video link 2",
+          },
+          {
+            id: 3,
+            name: "Sprint Lecture 3",
+            videoLink: "Sprint Video link 3",
+          },
+        ],
         usersEnrolled: 0
       },
       {
@@ -47,6 +115,23 @@ export default new Vuex.Store({
         imageSrc: "",
         name: "ASP .NET",
         info: "Lorem Ipsum",
+        lectures: [
+          {
+            id: 1,
+            nameASP : "ASP .NET Lecture 1",
+            videoLink: "ASP .NET Video link 1",
+          },
+          {
+            id: 2,
+            name: "ASP .NET Lecture 2",
+            videoLink: "ASP .NET Video link 2",
+          },
+          {
+            id: 3,
+            name: "ASP .NET Lecture 3",
+            videoLink: "ASP .NET Video link 3",
+          },
+        ],
         usersEnrolled: 0
       },
       {
@@ -54,6 +139,23 @@ export default new Vuex.Store({
         imageSrc: "",
         name: "Express",
         info: "Lorem Ipsum",
+        lectures: [
+          {
+            id: 1,
+            name: "Express Lecture 1",
+            videoLink: "Express Video link 1",
+          },
+          {
+            id: 2,
+            name: "Express Lecture 2",
+            videoLink: "Express Video link 2",
+          },
+          {
+            id: 3,
+            name: "Express Lecture 3",
+            videoLink: "Express Video link 3",
+          },
+        ],
         usersEnrolled: 3
       },
     ],
