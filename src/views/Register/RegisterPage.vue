@@ -80,17 +80,17 @@ export default {
       const userFound = this.users.find(user => user.username === username);
       if(userFound) return;
 
-      const coursesId = [];
+      const courses = [];
       const user = {
         username,
         password,
-        coursesId,
+        courses,
       };
       const usersCopy = this.users.map(user => user);
       usersCopy.push(user);
 
       this.action_is_user_logged_in(true);
-      this.action_current_user({username, coursesId});
+      this.action_current_user({username, courses});
       this.action_save_users(usersCopy);
       this.$router.push({name: "Home"});
     }

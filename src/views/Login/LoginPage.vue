@@ -70,9 +70,9 @@ export default {
       const userFound = this.users.find(user => user.username === username && user.password === password);
       if(userFound === undefined) return;
 
-      const coursesId = this.users.find(user => user.username === username).coursesId;
+      const courses = this.users.find(user => user.username === username).courses;
       this.action_is_user_logged_in(true);
-      this.action_current_user({username, coursesId});
+      this.action_current_user({username, courses});
       this.$router.push({name: "Home"});
     }
   }
