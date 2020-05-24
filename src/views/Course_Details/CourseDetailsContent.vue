@@ -23,13 +23,15 @@
     <h3 v-if="userNotEnrolled">{{courseNotEnrolled}}</h3>
     <h3 v-else>{{lecturesListText}}</h3>
 
-    <LectureDetails
-      v-for="lecture in lectures"
-      :key="lecture.id"
-      :lecture="lecture"
-      :button="playButton"
-      :onClick="playCourse"
-    />
+    <div v-if="!userNotEnrolled">
+      <LectureDetails
+        v-for="lecture in lectures"
+        :key="lecture.id"
+        :lecture="lecture"
+        :button="playButton"
+        :onClick="playCourse"
+      />
+    </div>
   </div>
 </template>
 
