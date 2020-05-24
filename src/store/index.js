@@ -13,7 +13,7 @@ export default new Vuex.Store({
     // TODO MAI MOGA BEZ DOLNITE 2, VMESTO TQH TRQBVA DA PROVERQVAM Object.keys(this.current_user).length > 0;
     is_user_logged_in: false,
     is_admin_logged_In: false,
-    courses: [
+    public_courses: [
       {
         id: 1,
         imageUrl: "",
@@ -190,8 +190,8 @@ export default new Vuex.Store({
     [types.IS_ADMIN_LOGGED_IN]: (state, payload) => {
       state.is_admin_logged_In = payload;
     },
-    [types.UPDATE_COURSES]: (state, payload) => {
-      state.courses = payload;
+    [types.UPDATE_PUBLIC_COURSES]: (state, payload) => {
+      state.public_courses = payload;
     },
     [types.UPDATE_PRIVATE_COURSES]: (state, payload) => {
       state.private_courses = payload;
@@ -210,8 +210,8 @@ export default new Vuex.Store({
     [types.ACTION_IS_ADMIN_LOGGED_IN]({ commit }, payload) {
       commit(types.IS_ADMIN_LOGGED_IN, payload);
     },
-    [types.ACTION_UPDATE_COURSES]({ commit }, payload) {
-      commit(types.UPDATE_COURSES, payload);
+    [types.ACTION_UPDATE_PUBLIC_COURSES]({ commit }, payload) {
+      commit(types.UPDATE_PUBLIC_COURSES, payload);
     },
     [types.ACTION_UPDATE_PRIVATE_COURSES]({ commit }, payload) {
       commit(types.UPDATE_PRIVATE_COURSES, payload);

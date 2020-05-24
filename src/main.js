@@ -22,7 +22,7 @@ router.beforeEach((to, from, next) => {
   const isUserLogged = userRoutes.some(routeName => routeName === to.name) && userName !== "Admin";
   if (to.path.includes("/course-details/")) {
     const courseId = Number(to.params.id);
-    const courses = state.courses;
+    const courses = state.public_courses;
     const course = courses.find(course => course.id === courseId);
     if (course === undefined) return next(from.path);
   }
