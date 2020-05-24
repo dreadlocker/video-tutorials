@@ -77,8 +77,8 @@ export default {
     editCourse(course) {
       this.$router.push({name: "EditCourse", params: course});
     },
-    addLecture() {
-      console.log("addLecture() {");
+    addLecture(course) {
+      this.$router.push({name: "LecturePanel", params: course});
     },
   }
 };

@@ -10,7 +10,7 @@
       <BaseButton
         :button="addLectureButton"
         :onClick="addLecture"
-        :argument="course.id"
+        :argument="course"
       />
       <span class="lectures-in-course">{{lecturesInCourse}}</span>
       <span class="lectures-count primary">{{lecturesCount}}</span>
