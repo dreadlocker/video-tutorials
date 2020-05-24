@@ -18,12 +18,12 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-import BaseNavBar from "@/components/BaseNavBar.vue";
-import BaseFooter from "@/components/BaseFooter.vue";
 import {
   ACTION_IS_USER_LOGGED_IN,
   ACTION_CURRENT_USER,
 } from "@/store/types.js";
+import BaseNavBar from "@/components/BaseNavBar.vue";
+import BaseFooter from "@/components/BaseFooter.vue";
 
 export default {
   name: "App",

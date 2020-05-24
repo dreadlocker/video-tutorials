@@ -1,12 +1,12 @@
 <template>
   <div>
     <BaseHeading
-      :text="`Course title : ${currentCourse.name}`"
+      :text="`Course title : ${currentCourse.title}`"
       :classes="headingClasses"
     />
 
     <div class="course-details-holder">
-      <div class="course-details-image">{{currentCourse.name}} image</div>
+      <div class="course-details-image">{{currentCourse.title}} image</div>
         <div>
           <h3>{{courseDescriptionHeading}}</h3>
           <p>Lorem Ipsum</p>

@@ -105,7 +105,7 @@ export default {
     },
     updateCourses() {
       const coursesCopy = [...this.courses];
-      const currentCourse = coursesCopy.find(course => course.name === this.currentCourse.name);
+      const currentCourse = coursesCopy.find(course => course.title === this.currentCourse.title);
       currentCourse.usersEnrolled += 1;
       this.action_update_courses(coursesCopy);
     },

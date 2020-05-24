@@ -1,6 +1,6 @@
 <template>
   <div class="admin-course-holder">
-    <div>{{course.name}}</div>
+    <div>{{course.title}}</div>
     <div>
       <BaseButton
         :button="editCourseButton"
