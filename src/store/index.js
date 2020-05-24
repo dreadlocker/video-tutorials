@@ -169,6 +169,9 @@ export default new Vuex.Store({
     [types.IS_ADMIN_LOGGED_IN]: (state, payload) => {
       state.is_admin_logged_In = payload;
     },
+    [types.UPDATE_COURSES]: (state, payload) => {
+      state.courses = payload;
+    },
     [types.SAVE_USERS]: (state, payload) => {
       state.users = payload;
     },
@@ -182,6 +185,9 @@ export default new Vuex.Store({
     },
     [types.ACTION_IS_ADMIN_LOGGED_IN]({ commit }, payload) {
       commit(types.IS_ADMIN_LOGGED_IN, payload);
+    },
+    [types.ACTION_UPDATE_COURSES]({ commit }, payload) {
+      commit(types.UPDATE_COURSES, payload);
     },
     [types.ACTION_SAVE_USERS]({ commit }, payload) {
       commit(types.SAVE_USERS, payload);
