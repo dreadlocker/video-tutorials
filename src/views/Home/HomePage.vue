@@ -1,7 +1,8 @@
 <template>
   <div>
-    <DefaultHomePage v-if="!is_user_logged_in && !is_admin_logged_In" />
-    <UserHomePage v-if="is_user_logged_in && !is_admin_logged_In" />
+    <DefaultHomePage v-if="current_user.username === undefined" />
+    <UserHomePage v-if="current_user.username !== 'Admin' && current_user.username !== undefined" />
+    <AdminHomePage v-if="current_user.username === 'Admin'" />
   </div>
 </template>
 
@@ -9,17 +10,18 @@
 import { mapState } from "vuex";
 import DefaultHomePage from "./Default/HomePage.vue";
 import UserHomePage from "./User_logged_in/HomePage.vue";
+import AdminHomePage from "./Admin_logged_in/HomePage.vue";
 
 export default {
   name: "HomePage",
   components: {
     DefaultHomePage,
     UserHomePage,
+    AdminHomePage,
   },
   computed: {
     ...mapState({
-      is_user_logged_in: state => state.is_user_logged_in,
-      is_admin_logged_In: state => state.is_admin_logged_In,
+      current_user: state => state.current_user,
     }),
   },
 };
