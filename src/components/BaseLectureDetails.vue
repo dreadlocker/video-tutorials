@@ -13,7 +13,7 @@
 import BaseButton from "@/components/BaseButton.vue";
 
 export default {
-  name: "LectureDetails",
+  name: "BaseLectureDetails",
   components: {
     BaseButton,
   },
