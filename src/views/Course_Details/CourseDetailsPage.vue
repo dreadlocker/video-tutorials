@@ -95,7 +95,7 @@ export default {
       action_update_public_courses: ACTION_UPDATE_PUBLIC_COURSES,
     }),
     enrollCourse() {
-      const usersCopy = this.users.map(user => user);
+      const usersCopy = [...this.users];
       const userInfo = usersCopy.find(user => user.username === this.current_user.username);
       userInfo.courses.push(this.currentCourse.id);
       

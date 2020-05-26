@@ -84,7 +84,7 @@ export default {
         password,
         courses,
       };
-      const usersCopy = this.users.map(user => user);
+      const usersCopy = [...this.users];
       usersCopy.push(user);
 
       this.action_current_user({username, courses});
