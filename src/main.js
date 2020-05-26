@@ -15,7 +15,7 @@ router.beforeEach((to, from, next) => {
   const userName = state.current_user.username;
   const isNooneLogged = 
     allowedRoutes.some(routeName => routeName === to.name)
-    && userName === undefined;
+    && !userName;
   if(isNooneLogged) return next();
   
   // TODO PlayVideo -	Users (logged in and enrolled in the course) 
@@ -24,7 +24,7 @@ router.beforeEach((to, from, next) => {
     const courseId = Number(to.params.id);
     const courses = state.public_courses;
     const course = courses.find(course => course.id === courseId);
-    if (course === undefined) return next(from.path);
+    if (!course) return next(from.path);
   }
   if(isUserLogged) return next();
   

@@ -107,7 +107,7 @@ export default {
       const currentCourseLectures = currentCourse.lectures;
       const lastLecture = currentCourseLectures[currentCourseLectures.length - 1];
       const [name, videoLink] = this.inputs.map(input => input.value);
-      const id = lastLecture === undefined ? 1 : lastLecture.id + 1;
+      const id = !lastLecture ? 1 : lastLecture.id + 1;
       const newLecture = {id, name, videoLink};
 
       currentCourseLectures.push(newLecture);

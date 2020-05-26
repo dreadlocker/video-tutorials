@@ -65,7 +65,7 @@ export default {
       const username = this.inputs.find(input => input.label === "Username").value;
       const password = this.inputs.find(input => input.label === "Password").value;
       const userFound = this.users.find(user => user.username === username && user.password === password);
-      if(userFound === undefined) return;
+      if(!userFound) return;
 
       const courses = this.users.find(user => user.username === username).courses;
       this.action_current_user({username, courses});

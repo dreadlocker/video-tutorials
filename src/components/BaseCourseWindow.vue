@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      :class="{'course-holder-margin': button === undefined}"
-      class="course-holder"
-    >
+    <div class="course-holder">
       <!-- I don't have courses images, so I'll show a div instead of img tag -->
       <div class="course-image">{{course.title}} image</div>
       <div class="course-info">
@@ -13,7 +10,7 @@
     </div>
     
     <div
-      v-if="button !== undefined"
+      v-if="button"
       class="course-button-holder course-holder-margin"
     >
       <BaseButton

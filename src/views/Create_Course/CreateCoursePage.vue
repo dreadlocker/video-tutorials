@@ -103,7 +103,7 @@ export default {
     },
     addCourse(coursesCopy, type) {
       const lastCourse = coursesCopy[coursesCopy.length - 1];
-      const id = lastCourse === undefined ? 1 : lastCourse.id + 1;
+      const id = !lastCourse ? 1 : lastCourse.id + 1;
       const [title, description, imageUrl] = this.inputs.map(input => input.value);
       const lectures = [];
       const usersEnrolled = 0;
