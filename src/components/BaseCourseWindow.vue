@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="courses-holder">
     <div class="course-holder">
       <!-- I don't have courses images, so I'll show a div instead of img tag -->
       <div class="course-image">{{course.title}} image</div>

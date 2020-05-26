@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lecture-panel-page">
     <BaseHeading
       :text="headingText"
       :classes="headingClasses"

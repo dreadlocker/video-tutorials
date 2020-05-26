@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="admin-home-page">
     <BaseButton
       :button="createCourseButton"
       :onClick="createCourse"

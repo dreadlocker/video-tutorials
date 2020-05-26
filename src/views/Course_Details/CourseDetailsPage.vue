@@ -22,6 +22,7 @@
     :headingClasses="playPageHeadingClasses"
     :playButton="playButton"
     :playCourse="playCourse"
+    class="play-video-page"
   />
 </template>
 
@@ -70,7 +71,7 @@ export default {
   },
   data() {
     return {
-      headingClasses: "text-align-left",
+      headingClasses: "heading-padding-x text-align-left",
       courseDescriptionHeading: "Course Description",
       enrollButton: {
         type: "button",

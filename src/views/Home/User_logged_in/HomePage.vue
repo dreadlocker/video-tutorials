@@ -62,7 +62,7 @@ export default {
       },
       searchButton: {
         type: "button",
-        classes: "",
+        classes: "primary",
         text: "Search",
       },
     };

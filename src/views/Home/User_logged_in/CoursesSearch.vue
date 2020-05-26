@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="search-holder">
     <BaseInput
       :input="input"
       :button="button"

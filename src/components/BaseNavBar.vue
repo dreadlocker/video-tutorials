@@ -2,7 +2,7 @@
   <div class="nav-bar">
     <div>{{text}}</div>
 
-    <div>
+    <div class="nav-bar-links-holder">
       <router-link
         v-for="route in routes"
         :key="route.text"

@@ -23,7 +23,10 @@
     <h3 v-if="userNotEnrolled">{{courseNotEnrolled}}</h3>
     <h3 v-else>{{lecturesListText}}</h3>
 
-    <div v-if="!userNotEnrolled">
+    <div
+      v-if="!userNotEnrolled"
+      class="lectures-holder"
+    >
       <BaseLectureDetails
         v-for="lecture in lectures"
         :key="lecture.id"
