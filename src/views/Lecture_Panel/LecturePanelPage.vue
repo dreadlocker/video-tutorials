@@ -113,10 +113,10 @@ export default {
       currentCourseLectures.push(newLecture);
       this.action_update_public_courses(publicCoursesCopy);
     },
-    deleteLecture(courseAndLecture) {
+    deleteLecture(lectureId, courseId) {
       const publicCoursesCopy = [...this.public_courses];
-      const currentCours = publicCoursesCopy.find(courseCopy => courseCopy.id === courseAndLecture.course.id);
-      const currentLecture = currentCours.lectures.find(lectureCopy => lectureCopy.id === courseAndLecture.lecture.id);
+      const currentCours = publicCoursesCopy.find(courseCopy => courseCopy.id === courseId);
+      const currentLecture = currentCours.lectures.find(lectureCopy => lectureCopy.id === lectureId);
       const indexOfCuttentLecture = currentCours.lectures.indexOf(currentLecture);
       currentCours.lectures.splice(indexOfCuttentLecture, 1);
 
