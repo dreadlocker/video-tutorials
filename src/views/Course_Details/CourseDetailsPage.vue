@@ -110,9 +110,9 @@ export default {
       currentCourse.usersEnrolled += 1;
       this.action_update_public_courses(coursesCopy);
     },
-    playCourse(courseAndlecture) {
+    playCourse(lectureId) {
       const currentPath = this.$route.path;
-      this.$router.push({ path: currentPath, query: { play: courseAndlecture.lecture.id } });
+      this.$router.push({ path: currentPath, query: { play: lectureId } });
     }
   },
   beforeCreate() {

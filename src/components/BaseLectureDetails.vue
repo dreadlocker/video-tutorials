@@ -4,7 +4,7 @@
     <BaseButton
       :button="button"
       :onClick="onClick"
-      :argument="{course, lecture}"
+      :argument="lecture.id"
     />
   </div>
 </template>
