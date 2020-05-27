@@ -74,7 +74,7 @@ export default {
       courseDescriptionHeading: "Course Description",
       enrollButton: {
         type: "button",
-        classes: "",
+        classes: "primary",
         text: "Enroll",
       },
       courseNotEnrolled: "To get full access please enroll the course",
