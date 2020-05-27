@@ -53,15 +53,18 @@ body
   width: $course-holder-width
   height: $course-holder-height
   border: 1px solid gray
-// .course-holder-margin
-//   margin-bottom: 20px
-.course-image
-  width: 200px
+.course-image-holder
   height: 200px
+  width: 200px
   display: flex
   justify-content: center
   align-items: center
-  background-color: $background-color-1
+.course-image
+  max-height: 200px
+  max-width: 200px
+  width: auto
+  height: auto
+  display: flex
 .course-info
   height: $course-info-height
   display: flex
