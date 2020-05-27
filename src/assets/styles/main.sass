@@ -53,18 +53,10 @@ body
   width: $course-holder-width
   height: $course-holder-height
   border: 1px solid gray
-.course-image-holder
-  height: 200px
-  width: 200px
-  display: flex
-  justify-content: center
-  align-items: center
 .course-image
-  max-height: 200px
-  max-width: 200px
-  width: auto
-  height: auto
-  display: flex
+  width: $course-image-height
+  height: $course-image-height
+  object-fit: cover
 .course-info
   height: $course-info-height
   display: flex
@@ -127,7 +119,6 @@ body
 
 // PlayVideo START
 .lecture-video
-  // width: 400px
   height: 200px
   border: 1px solid gray
   background-color: $background-color-1
