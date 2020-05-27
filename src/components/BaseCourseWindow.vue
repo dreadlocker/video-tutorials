@@ -1,9 +1,7 @@
 <template>
   <div class="courses-holder">
     <div class="course-holder">
-      <div class="course-image-holder">
-        <img :src="course.imageUrl" class="course-image" alt="course-image">
-      </div>
+      <img :src="course.imageUrl" class="course-image" alt="course-image">
       <div class="course-info">
         <div>{{course.title}}</div>
         <div>{{course.description}}</div>
