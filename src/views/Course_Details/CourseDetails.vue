@@ -33,7 +33,6 @@
         :lecture="lecture"
         :button="playButton"
         :onClick="playCourse"
-        :course="currentCourse"
       />
     </div>
   </div>
