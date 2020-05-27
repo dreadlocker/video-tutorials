@@ -5,7 +5,7 @@
       :button="button"
       :onClick="onClick"
       :argument="lecture.id"
-      :courseId="course.id"
+      :courseId="course ? course.id : 0"
     />
   </div>
 </template>
