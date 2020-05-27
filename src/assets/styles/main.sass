@@ -31,9 +31,7 @@ body
 
 // HomePage START
 .content
-  // width: calc( #{$course-holder-width + 20px} * 3 )
   display: flex
-  justify-content: space-between
   flex-wrap: wrap
   margin: 0 auto 20px
 // HomePage END
@@ -52,7 +50,7 @@ body
 .course-holder
   width: $course-holder-width
   height: $course-holder-height
-  border: 1px solid gray
+  border: #{$course-holder-border-width} solid gray
 .course-image
   width: $course-image-height
   height: $course-image-height
@@ -258,10 +256,10 @@ body
 
 @media (min-width: $min-tablet-portrait-width) and (max-width: $min-pc-width - 1)
   .max-width
-    width: 700px
+    width: calc( (#{$course-holder-width} + (#{$courses-holder-margin-x} * 2) + (#{$course-holder-border-width} * 2)) * 3 )
     margin: 0 auto
   .courses-holder
-    margin-bottom: 20px
+    margin: 0 $courses-holder-margin-x 20px
   .admin-course-buttons-info-holder
     display: flex
     align-items: center
@@ -274,10 +272,10 @@ body
 
 @media (min-width: $min-pc-width)
   .max-width
-    width: 1000px
+    width: calc( (#{$course-holder-width} + (#{$courses-holder-margin-x} * 2) + (#{$course-holder-border-width} * 2)) * 4 )
     margin: 0 auto
   .courses-holder
-    margin-bottom: 20px
+    margin: 0 $courses-holder-margin-x 20px
   .admin-course-buttons-info-holder
     display: flex
     align-items: center
