@@ -17,6 +17,7 @@
       :lecture="lecture"
       :button="playButton"
       :onClick="playCourse"
+      :course="currentCourse"
     />
   </div>
 </template>
@@ -51,6 +52,9 @@ export default {
     playCourse: {
       type: Function,
       required: true,
+    },
+    currentCourse: {
+      type: Object,
     },
   },
 };

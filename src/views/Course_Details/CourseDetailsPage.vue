@@ -22,6 +22,7 @@
     :headingClasses="playPageHeadingClasses"
     :playButton="playButton"
     :playCourse="playCourse"
+    :currentCourse="currentCourse"
   />
 </template>
 
