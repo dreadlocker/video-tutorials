@@ -1,8 +1,9 @@
 <template>
   <div class="courses-holder">
     <div class="course-holder">
-      <!-- I don't have courses images, so I'll show a div instead of img tag -->
-      <div class="course-image">{{course.title}} image</div>
+      <div class="course-image-holder">
+        <img :src="course.imageUrl" class="course-image" alt="course-image">
+      </div>
       <div class="course-info">
         <div>{{course.title}}</div>
         <div>{{course.description}}</div>
