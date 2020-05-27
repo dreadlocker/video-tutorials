@@ -6,18 +6,18 @@
     />
 
     <div class="course-details-holder max-width">
-      <div class="course-details-image">{{currentCourse.title}} image</div>
-        <div>
-          <h3>{{courseDescriptionHeading}}</h3>
-          <p>Lorem Ipsum</p>
-          <BaseButton
-            v-if="userNotEnrolled"
-            :button="enrollButton"
-            :onClick="enrollCourse"
-            :courseId="currentCourse.id"
-          />
-          <div v-else class="course-enrolled">{{enrolled}}</div>
-        </div>
+      <img :src="currentCourse.imageUrl" class="course-details-image" alt="course-image">
+      <div>
+        <h3>{{courseDescriptionHeading}}</h3>
+        <p>Lorem Ipsum</p>
+        <BaseButton
+          v-if="userNotEnrolled"
+          :button="enrollButton"
+          :onClick="enrollCourse"
+          :courseId="currentCourse.id"
+        />
+        <div v-else class="course-enrolled">{{enrolled}}</div>
+      </div>
     </div>
 
     <h3 v-if="userNotEnrolled">{{courseNotEnrolled}}</h3>
