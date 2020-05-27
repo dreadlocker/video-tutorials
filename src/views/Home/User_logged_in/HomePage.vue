@@ -4,16 +4,15 @@
       :text="contentHeaderText"
       :classes="headingClasses"
     />
-    <!-- TODO CoursesSearch FUNCTIONALITY NOT DONE -->
     <CoursesSearch
       :input="input"
       :button="searchButton"
-      :onClick="courseSearch"
+      :onClick="coursesSearch"
     />
     
     <div class="content">
       <BaseCourseWindow
-        v-for="course in coursesSorted"
+        v-for="course in courses"
         :key="course.id"
         :course="course"
         :button="coursesButton"
@@ -41,15 +40,12 @@ export default {
     ...mapState({
       public_courses: state => state.public_courses,
     }),
-    coursesSorted() {
-      const coursesCopy = [...this.public_courses];
-      return coursesCopy.sort((a, b) => a.id - b.id);
-    }
   },
   data() {
     return {
       headingClasses: "text-align-center",
       contentHeaderText: "Courses",
+      courses: [],
       coursesButton: {
         type: "button",
         text: "Details",
@@ -68,12 +64,16 @@ export default {
     };
   },
   methods: {
-    courseSearch() {
-      // console.log("courseSearch");
+    coursesSearch() {
+      const titleRexExp = new RegExp(this.input.value, "gi");
+      this.courses = this.public_courses.filter(course => titleRexExp.test(course.title));
     },
     showCourse(courseId) {
       this.$router.push(`/course-details/${courseId}`);
     },
+  },
+  mounted() {
+    this.courses = [...this.public_courses];
   }
 };
 </script>
