@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="max-width">
     <BaseHeading
       :text="`Course title : ${currentCourse.title}`"
       :classes="headingClasses"
     />
 
-    <div class="course-details-holder">
+    <div class="course-details-holder max-width">
       <div class="course-details-image">{{currentCourse.title}} image</div>
         <div>
           <h3>{{courseDescriptionHeading}}</h3>
@@ -25,7 +25,7 @@
 
     <div
       v-if="!userNotEnrolled"
-      class="lectures-holder"
+      class="max-width"
     >
       <BaseLectureDetails
         v-for="lecture in lectures"

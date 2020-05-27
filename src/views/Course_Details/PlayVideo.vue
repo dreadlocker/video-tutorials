@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-width">
     <BaseHeading
       :text="`Now playing : ${lecture.name}`"
       :classes="headingClasses"

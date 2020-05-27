@@ -10,7 +10,7 @@
       :classes="headingClasses"
     />
 
-    <div class="content">
+    <div class="content max-width">
       <BaseCourseWindow
         v-for="course in coursesSorted"
         :key="course.id"

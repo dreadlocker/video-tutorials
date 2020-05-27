@@ -22,7 +22,6 @@
     :headingClasses="playPageHeadingClasses"
     :playButton="playButton"
     :playCourse="playCourse"
-    class="play-video-page"
   />
 </template>
 

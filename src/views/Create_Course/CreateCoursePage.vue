@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-width">
     <BaseHeading
       :text="headingText"
       :classes="headingClasses"

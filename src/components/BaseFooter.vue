@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">{{text}}<a class="fotter-link">{{link}}</a></div>
+  <div class="footer max-width">{{text}}<a class="fotter-link">{{link}}</a></div>
 </template>
 
 <script>

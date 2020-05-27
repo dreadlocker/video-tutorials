@@ -1,5 +1,5 @@
 <template>
-  <div class="admin-home-page">
+  <div class="max-width">
     <BaseButton
       :button="createCourseButton"
       :onClick="createCourse"

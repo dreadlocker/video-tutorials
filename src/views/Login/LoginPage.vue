@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-width">
     <BaseInput
       v-for="input in inputs"
       :key="input.label"

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-width">
     <h1 :class="classes">{{text}}</h1>
   </div>
 </template>
