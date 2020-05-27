@@ -20,23 +20,18 @@ export default new Vuex.Store({
         lectures: [
           {
             id: 1,
-            name: "React Lecture 1",
-            videoLink: "Video link 1",
+            name: "Introduction",
+            videoLink: "https://www.youtube.com/embed/OxIDLw0M-m0",
           },
           {
             id: 2,
-            name: "React Lecture 2",
-            videoLink: "Video link 2",
+            name: "How React Works",
+            videoLink: "https://www.youtube.com/embed/pKYiKbf7sP0",
           },
           {
             id: 3,
-            name: "React Lecture 3",
-            videoLink: "React Video link 3",
-          },
-          {
-            id: 4,
-            name: "React Lecture 4",
-            videoLink: "React Video link 4",
+            name: "React Setup (with CDN)",
+            videoLink: "https://www.youtube.com/embed/SAX6RMEFVM4",
           },
         ],
       },
@@ -49,18 +44,13 @@ export default new Vuex.Store({
         lectures: [
           {
             id: 1,
-            name: "Angular Lecture 1",
-            videoLink: "Angular Video link 1",
+            name: "Introduction",
+            videoLink: "https://www.youtube.com/embed/0eWrpsCLMJQ",
           },
           {
             id: 2,
-            name: "Angular Lecture 2",
-            videoLink: "Angular Video link 2",
-          },
-          {
-            id: 3,
-            name: "Angular Lecture 3",
-            videoLink: "Angular Video link 3",
+            name: "Getting Started",
+            videoLink: "https://www.youtube.com/embed/FVPGJHinItI",
           },
         ],
       },
@@ -73,52 +63,22 @@ export default new Vuex.Store({
         lectures: [
           {
             id: 1,
-            name: "Symfony Lecture 1",
-            videoLink: "Symfony Video link 1",
-          },
-          {
-            id: 2,
-            name: "Symfony Lecture 2",
-            videoLink: "Symfony Video link 2",
-          },
-          {
-            id: 3,
-            name: "Symfony Lecture 3",
-            videoLink: "Symfony Video link 3",
+            name: "Before you watch the series",
+            videoLink: "https://www.youtube.com/embed/l5QLodEL1jo",
           },
         ],
       },
       {
         id: 5,
         imageUrl: "https://5.imimg.com/data5/CO/RG/WK/GLADMIN-14526645/selection-036-500x500.png",
-        title: "Sprint MVC",
+        title: "Spring MVC",
         description: "Lorem Ipsum",
         usersEnrolled: 0,
         lectures: [
           {
             id: 1,
-            name: "Sprint Lecture 1",
-            videoLink: "Sprint Video link 1",
-          },
-          {
-            id: 2,
-            name: "Sprint Lecture 2",
-            videoLink: "Sprint Video link 2",
-          },
-          {
-            id: 3,
-            name: "Sprint Lecture 3",
-            videoLink: "Sprint Video link 3",
-          },
-          {
-            id: 4,
-            name: "Sprint Lecture 4",
-            videoLink: "Sprint Video link 4",
-          },
-          {
-            id: 5,
-            name: "Sprint Lecture 5",
-            videoLink: "Sprint Video link 5",
+            name: "introduction",
+            videoLink: "https://www.youtube.com/embed/zCHrZdJODg4",
           },
         ],
       },
@@ -131,18 +91,8 @@ export default new Vuex.Store({
         lectures: [
           {
             id: 1,
-            name : "ASP .NET Lecture 1",
-            videoLink: "ASP .NET Video link 1",
-          },
-          {
-            id: 2,
-            name: "ASP .NET Lecture 2",
-            videoLink: "ASP .NET Video link 2",
-          },
-          {
-            id: 3,
-            name: "ASP .NET Lecture 3",
-            videoLink: "ASP .NET Video link 3",
+            name : "Core Tutorial",
+            videoLink: "https://www.youtube.com/embed/4IgC2Q5-yDE",
           },
         ],
       },
@@ -155,18 +105,8 @@ export default new Vuex.Store({
         lectures: [
           {
             id: 1,
-            name: "Express Lecture 1",
-            videoLink: "Express Video link 1",
-          },
-          {
-            id: 2,
-            name: "Express Lecture 2",
-            videoLink: "Express Video link 2",
-          },
-          {
-            id: 3,
-            name: "Express Lecture 3",
-            videoLink: "Express Video link 3",
+            name: "Intro & Environment",
+            videoLink: "https://www.youtube.com/embed/k_0ZzvHbNBQ",
           },
         ],
       },
