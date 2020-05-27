@@ -5,7 +5,11 @@
       :classes="headingClasses"
     />
 
-    <div class="lecture-video">{{lecture.videoLink}}</div>
+    <iframe
+      :src="lecture.videoLink"
+      class="lecture-video max-width"
+      controls="controls"
+    ></iframe>
     <h3>Lectures List</h3>
     <BaseLectureDetails
       v-for="lecture in lectures"
