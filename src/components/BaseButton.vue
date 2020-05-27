@@ -20,7 +20,7 @@ export default {
       required: true
     },
     argument: {
-      type: [Number, Object],
+      type: Number,
     },
   },
 };
