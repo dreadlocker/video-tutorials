@@ -50,15 +50,13 @@ export default {
       type: String,
       required: true,
     },
+    lecturesCount: {
+      type: Number,
+      required: true,
+    },
   },
   components: {
     BaseButton,
-    // BaseCourseWindow,
   },
-  computed: {
-    lecturesCount() {
-      return this.course.lectures.length;
-    }
-  }
 };
 </script>
