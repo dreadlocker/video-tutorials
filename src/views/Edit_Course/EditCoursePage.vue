@@ -79,14 +79,14 @@ export default {
       action_update_public_courses: ACTION_UPDATE_PUBLIC_COURSES,
     }),
     submit() {
-      const inputValues = this.inputs.map(input => input.value.trim());
-      const hasEmptyFields = inputValues.some(value => value === "");
+      const [title, description, imageUrl] = this.inputs.map(input => input.value.trim());
+      const hasEmptyFields = title === "" || description === "" || imageUrl === "";
       if(hasEmptyFields) return;
       
       const currentCourse = this.publicCourses.find(course => course.id === this.course.id);
-      currentCourse.title = this.inputs[0].value;
-      currentCourse.description = this.inputs[1].value;
-      currentCourse.imageUrl = this.inputs[2].value;
+      currentCourse.title = title;
+      currentCourse.description = description;
+      currentCourse.imageUrl = imageUrl;
       
       this.action_update_public_courses(this.publicCourses);
       this.$router.push({name: "Home"});
