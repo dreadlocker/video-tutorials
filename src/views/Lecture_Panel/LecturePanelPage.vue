@@ -103,7 +103,7 @@ export default {
       const currentCourse = this.publicCourses.find(courseCheck => courseCheck.id === courseId);
       const currentCourseLectures = currentCourse.lectures;
       const lastLecture = currentCourseLectures[currentCourseLectures.length - 1];
-      const [name, videoLink] = this.inputs.map(input => input.value);
+      const [name, videoLink] = this.inputs.map(input => input.value.trim());
       const id = !lastLecture ? 1 : lastLecture.id + 1;
       const newLecture = {id, name, videoLink};
 

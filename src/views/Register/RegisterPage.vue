@@ -68,7 +68,7 @@ export default {
       action_current_user: ACTION_CURRENT_USER,
     }),
     registerUser() {
-      const [username, password, repeatPassword] = this.inputs.map(input => input.value);
+      const [username, password, repeatPassword] = this.inputs.map(input => input.value.trim());
       if(password !== repeatPassword) return;
 
       const userFound = this.users.find(user => user.username === username);

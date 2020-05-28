@@ -101,7 +101,7 @@ export default {
     addCourse(coursesSorted, type) {
       const lastCourse = coursesSorted[coursesSorted.length - 1];
       const id = !lastCourse ? 1 : lastCourse.id + 1;
-      const [title, description, imageUrl] = this.inputs.map(input => input.value);
+      const [title, description, imageUrl] = this.inputs.map(input => input.value.trim());
       const lectures = [];
       const usersEnrolled = 0;
 
