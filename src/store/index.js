@@ -148,4 +148,12 @@ export default new Vuex.Store({
       commit(types.CURRENT_USER, payload);
     },
   },
+  getters: {
+    topThreePublicCourses: state => {
+      return state.public_courses.sort((a, b) => b.usersEnrolled - a.usersEnrolled).slice(0, 3);
+    },
+    haveCourses: state => {
+      return state.public_courses.length > 0;
+    },
+  }
 });
