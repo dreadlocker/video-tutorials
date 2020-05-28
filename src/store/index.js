@@ -116,6 +116,7 @@ export default new Vuex.Store({
       {
         username: "Admin",
         password: "a",
+        access: "admin"
       }
     ],
     current_user: {},
@@ -149,6 +150,18 @@ export default new Vuex.Store({
     },
   },
   getters: {
+    publicCourses: state => {
+      return state.public_courses;
+    },
+    privateCourses: state => {
+      return state.private_courses;
+    },
+    users: state => {
+      return state.users;
+    },
+    currentUser: state => {
+      return state.current_user;
+    },
     topThreePublicCourses: state => {
       return state.public_courses.sort((a, b) => b.usersEnrolled - a.usersEnrolled).slice(0, 3);
     },
