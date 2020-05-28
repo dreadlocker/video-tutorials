@@ -57,8 +57,7 @@ export default {
       return !isUserEnrolled;
     },
     lectures() {
-      const currentCourse = this.public_courses.find(course => course.id === this.currentCourse.id);
-      return currentCourse.lectures;
+      return this.currentCourse.lectures;
     },
     currentLecture() {
       const lectureId = this.$route.query.play;
@@ -100,7 +99,7 @@ export default {
       userInfo.courses.push(this.currentCourse.id);
       
       this.action_save_users(usersCopy);
-      this.action_current_user({username: userInfo.username, courses: userInfo.courses});
+      this.action_current_user({username: userInfo.username, courses: userInfo.courses, access: "user"});
 
       this.updateCourses();
     },
