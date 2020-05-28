@@ -20,6 +20,7 @@
         :addLectureButton="addLectureButton"
         :addLecture="addLecture"
         :lecturesInCourse="lecturesInCourse"
+        :lecturesCount="course.lectures.length"
       />
     </div>
   </div>
