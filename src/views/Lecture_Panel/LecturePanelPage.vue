@@ -15,7 +15,7 @@
     <BaseButton
       :button="submitButton"
       :onClick="submit"
-      :argument="course"
+      :argument="course.id"
     />
 
     <h2>{{lecturesInCourseText}}</h2>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import {
   ACTION_UPDATE_PUBLIC_COURSES,
 } from "@/store/types.js";
@@ -50,12 +50,10 @@ export default {
     BaseLectureDetails,
   },
   computed: {
-    ...mapState({
-      public_courses: state => state.public_courses,
-    }),
+    ...mapGetters(["publicCourses"]),
     course() {
       const courseId = this.$route.params.id;
-      return this.public_courses.find(course => course.id === courseId);
+      return this.publicCourses.find(course => course.id === courseId);
     },
     headingText() {
       return `Add lectures to course ${this.course.title}`;
@@ -101,9 +99,8 @@ export default {
     ...mapActions({
       action_update_public_courses: ACTION_UPDATE_PUBLIC_COURSES,
     }),
-    submit(course) {
-      const publicCoursesCopy = [...this.public_courses];
-      const currentCourse = publicCoursesCopy.find(courseCopy => courseCopy.id === course.id);
+    submit(courseId) {
+      const currentCourse = this.publicCourses.find(courseCheck => courseCheck.id === courseId);
       const currentCourseLectures = currentCourse.lectures;
       const lastLecture = currentCourseLectures[currentCourseLectures.length - 1];
       const [name, videoLink] = this.inputs.map(input => input.value);
@@ -111,16 +108,15 @@ export default {
       const newLecture = {id, name, videoLink};
 
       currentCourseLectures.push(newLecture);
-      this.action_update_public_courses(publicCoursesCopy);
+      this.action_update_public_courses(this.publicCourses);
     },
     deleteLecture(lectureId, courseId) {
-      const publicCoursesCopy = [...this.public_courses];
-      const currentCours = publicCoursesCopy.find(courseCopy => courseCopy.id === courseId);
-      const currentLecture = currentCours.lectures.find(lectureCopy => lectureCopy.id === lectureId);
+      const currentCours = this.publicCourses.find(course => course.id === courseId);
+      const currentLecture = currentCours.lectures.find(lecture => lecture.id === lectureId);
       const indexOfCuttentLecture = currentCours.lectures.indexOf(currentLecture);
       currentCours.lectures.splice(indexOfCuttentLecture, 1);
 
-      this.action_update_public_courses(publicCoursesCopy);
+      this.action_update_public_courses(this.publicCourses);
     }
   }
 };

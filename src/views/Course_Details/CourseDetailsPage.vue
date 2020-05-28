@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import {
   ACTION_SAVE_USERS,
   ACTION_CURRENT_USER,
@@ -42,17 +42,13 @@ export default {
     PlayVideo,
   },
   computed: {
-    ...mapState({
-      public_courses: state => state.public_courses,
-      current_user: state => state.current_user,
-      users: state => state.users,
-    }),
+    ...mapGetters(["users", "publicCourses", "currentUser"]),
     currentCourse() {
       const currentCourseId = Number(this.$route.params.id);
-      return this.public_courses.find(course => course.id === currentCourseId);
+      return this.publicCourses.find(course => course.id === currentCourseId);
     },
     userNotEnrolled() {
-      const userCourses = this.current_user.courses;
+      const userCourses = this.currentUser.courses;
       const isUserEnrolled = userCourses.includes(this.currentCourse.id);
       return !isUserEnrolled;
     },
@@ -94,20 +90,18 @@ export default {
       action_update_public_courses: ACTION_UPDATE_PUBLIC_COURSES,
     }),
     enrollCourse() {
-      const usersCopy = [...this.users];
-      const userInfo = usersCopy.find(user => user.username === this.current_user.username);
+      const userInfo = this.users.find(user => user.username === this.currentUser.username);
       userInfo.courses.push(this.currentCourse.id);
       
-      this.action_save_users(usersCopy);
+      this.action_save_users(this.users);
       this.action_current_user({username: userInfo.username, courses: userInfo.courses, access: "user"});
 
       this.updateCourses();
     },
     updateCourses() {
-      const coursesCopy = [...this.public_courses];
-      const currentCourse = coursesCopy.find(course => course.title === this.currentCourse.title);
+      const currentCourse = this.publicCourses.find(course => course.title === this.currentCourse.title);
       currentCourse.usersEnrolled += 1;
-      this.action_update_public_courses(coursesCopy);
+      this.action_update_public_courses(this.publicCourses);
     },
     playCourse(lectureId) {
       const currentPath = this.$route.path;

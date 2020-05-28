@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import {
   ACTION_SAVE_USERS,
   ACTION_CURRENT_USER,
@@ -30,9 +30,7 @@ export default {
     BaseButton,
   },
   computed: {
-    ...mapState({
-      users: state => state.users,
-    })
+    ...mapGetters(["users"]),
   },
   data() {
     return {
@@ -77,10 +75,11 @@ export default {
       if(userFound) return;
 
       const courses = [];
-      const usersCopy = [...this.users, {username, password, courses} ];
+      const access = "user";
+      const newUsers = [...this.users, {username, password, courses, access} ];
 
-      this.action_current_user({username, courses, access: "user"});
-      this.action_save_users(usersCopy);
+      this.action_current_user({username, courses, access});
+      this.action_save_users(newUsers);
       this.$router.push({name: "Home"});
     }
   }

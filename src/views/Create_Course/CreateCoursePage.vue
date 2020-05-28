@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import {
   ACTION_UPDATE_PUBLIC_COURSES,
   ACTION_UPDATE_PRIVATE_COURSES,
@@ -46,10 +46,7 @@ export default {
     BaseButton,
   },
   computed: {
-    ...mapState({
-      public_courses: state => state.public_courses,
-      private_courses: state => state.private_courses,
-    }),
+    ...mapGetters(["publicCourses", "privateCourses"]),
   },
   data() {
     return {
@@ -94,24 +91,24 @@ export default {
     submit() {
       const isCoursePublic = this.checkboxBool;
       if (isCoursePublic) {
-        const publicCoursesCopy = [...this.public_courses].sort((a, b) => a.id - b.id);
-        this.addCourse(publicCoursesCopy, "public");
+        const publicCoursesSorted = this.publicCourses.sort((a, b) => a.id - b.id);
+        this.addCourse(publicCoursesSorted, "public");
       } else {
-        const privateCoursesCopy = [...this.private_courses].sort((a, b) => a.id - b.id);
-        this.addCourse(privateCoursesCopy, "private");
+        const privateCoursesSorted = this.privateCourses.sort((a, b) => a.id - b.id);
+        this.addCourse(privateCoursesSorted, "private");
       }
     },
-    addCourse(coursesCopy, type) {
-      const lastCourse = coursesCopy[coursesCopy.length - 1];
+    addCourse(coursesSorted, type) {
+      const lastCourse = coursesSorted[coursesSorted.length - 1];
       const id = !lastCourse ? 1 : lastCourse.id + 1;
       const [title, description, imageUrl] = this.inputs.map(input => input.value);
       const lectures = [];
       const usersEnrolled = 0;
 
-      coursesCopy.push({id, title, description, imageUrl, usersEnrolled, lectures});
+      coursesSorted.push({id, title, description, imageUrl, usersEnrolled, lectures});
 
-      if(type === "public") this.action_update_public_courses(coursesCopy);
-      if(type === "private") this.action_update_private_courses(coursesCopy);
+      if(type === "public") this.action_update_public_courses(coursesSorted);
+      if(type === "private") this.action_update_private_courses(coursesSorted);
 
       this.$router.push("/");
     }
