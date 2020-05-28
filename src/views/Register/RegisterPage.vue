@@ -70,24 +70,16 @@ export default {
       action_current_user: ACTION_CURRENT_USER,
     }),
     registerUser() {
-      const password = this.inputs.find(input => input.label === "Password").value;
-      const repeatPassword = this.inputs.find(input => input.label === "Repeat Password").value;
+      const [username, password, repeatPassword] = this.inputs.map(input => input.value);
       if(password !== repeatPassword) return;
 
-      const username = this.inputs.find(input => input.label === "Username").value;
       const userFound = this.users.find(user => user.username === username);
       if(userFound) return;
 
       const courses = [];
-      const user = {
-        username,
-        password,
-        courses,
-      };
-      const usersCopy = [...this.users];
-      usersCopy.push(user);
+      const usersCopy = [...this.users, {username, password, courses} ];
 
-      this.action_current_user({username, courses});
+      this.action_current_user({username, courses, access: "user"});
       this.action_save_users(usersCopy);
       this.$router.push({name: "Home"});
     }
