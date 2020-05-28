@@ -22,11 +22,13 @@ const routes = [
   },
   {
     path: "/course-details/:id",
-    name: "CourseDetails",
+    name: "CourseDetailsPage",
     component: () => import("@/views/Course_Details/CourseDetailsPage.vue"),
+    meta: {requiresAccess: "user"},
     children: [
       {
         path: "id",
+        name: "CourseDetails",
         component: () => import("@/views/Course_Details/CourseDetails.vue"),
       }
     ]
@@ -34,16 +36,19 @@ const routes = [
   {
     path: "/create-course",
     name: "CreateCourse",
+    meta: {requiresAccess: "admin"},
     component: () => import("@/views/Create_Course/CreateCoursePage.vue")
   },
   {
     path: "/edit-course",
     name: "EditCourse",
+    meta: {requiresAccess: "admin"},
     component: () => import("@/views/Edit_Course/EditCoursePage.vue")
   },
   {
     path: "/lecture-panel",
     name: "LecturePanel",
+    meta: {requiresAccess: "admin"},
     component: () => import("@/views/Lecture_Panel/LecturePanelPage.vue")
   }
 ];
