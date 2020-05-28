@@ -17,10 +17,6 @@
 </template>
 
 <script>
-// TODO DA DOBAVQ SNIMKI KUDETO TRQBVA,
-// DA ZAMENQ div s img TAGOVE,
-// TODO DA DOBAVQ VIDEO LINKOVE KUDETO TRQBVA,
-// DA ZAMENQ div s video TAGOVE
 import { mapState, mapActions } from "vuex";
 import {
   ACTION_CURRENT_USER,

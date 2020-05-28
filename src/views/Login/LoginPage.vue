@@ -62,7 +62,6 @@ export default {
       action_current_user: ACTION_CURRENT_USER,
     }),
     logginUser() {
-      // TODO DA PROVERQ OT VSI4KI IMPUT POLETA LI VZIMAM VALUE S .FIND PO OTDELNO ???
       const [username, password] = this.inputs.map(input => input.value.trim());
       const userFound = this.users.find(user => user.username === username && user.password === password);
       if(!userFound) return;
