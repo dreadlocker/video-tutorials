@@ -1,8 +1,8 @@
 <template>
   <div>
-    <DefaultHomePage v-if="!current_user.username" />
-    <UserHomePage v-if="current_user.username !== 'Admin' && current_user.username !== undefined" />
-    <AdminHomePage v-if="current_user.username === 'Admin'" />
+    <DefaultHomePage v-if="!current_user.access" />
+    <UserHomePage v-if="current_user.access === 'user'" />
+    <AdminHomePage v-if="current_user.access === 'admin'" />
   </div>
 </template>
 
