@@ -94,10 +94,10 @@ export default {
     submit() {
       const isCoursePublic = this.checkboxBool;
       if (isCoursePublic) {
-        const publicCoursesCopy = [...this.public_courses];
+        const publicCoursesCopy = [...this.public_courses].sort((a, b) => a.id - b.id);
         this.addCourse(publicCoursesCopy, "public");
       } else {
-        const privateCoursesCopy = [...this.private_courses];
+        const privateCoursesCopy = [...this.private_courses].sort((a, b) => a.id - b.id);
         this.addCourse(privateCoursesCopy, "private");
       }
     },
