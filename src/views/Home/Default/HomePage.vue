@@ -12,7 +12,7 @@
 
     <div class="content max-width">
       <BaseCourseWindow
-        v-for="course in coursesSorted"
+        v-for="course in topThreePublicCourses"
         :key="course.id"
         :course="course"
       />
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 import HomePageHeader from "./HomePageHeader.vue";
 import BaseHeading from "@/components/BaseHeading.vue";
 import BaseCourseWindow from "@/components/BaseCourseWindow.vue";
@@ -35,13 +35,7 @@ export default {
     BaseCourseWindow,
   },
   computed: {
-    ...mapState({
-      public_courses: state => state.public_courses,
-    }),
-    coursesSorted() {
-      const publicCoursesCopy = [...this.public_courses];
-      return publicCoursesCopy.sort((a, b) => b.usersEnrolled - a.usersEnrolled).slice(0, 3);
-    }
+    ...mapGetters(["topThreePublicCourses"]),
   },
   data() {
     return {
