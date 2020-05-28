@@ -62,13 +62,14 @@ export default {
       action_current_user: ACTION_CURRENT_USER,
     }),
     logginUser() {
-      const username = this.inputs.find(input => input.label === "Username").value;
-      const password = this.inputs.find(input => input.label === "Password").value;
+      // TODO DA PROVERQ OT VSI4KI IMPUT POLETA LI VZIMAM VALUE S .FIND PO OTDELNO ???
+      const [username, password] = this.inputs.map(input => input.value);
       const userFound = this.users.find(user => user.username === username && user.password === password);
       if(!userFound) return;
 
-      const courses = this.users.find(user => user.username === username).courses;
-      this.action_current_user({username, courses});
+      const courses = userFound.courses;
+      const access = userFound.username === "Admin" ? "admin" : "user";
+      this.action_current_user({username, courses, access});
       this.$router.push({name: "Home"});
     }
   }
