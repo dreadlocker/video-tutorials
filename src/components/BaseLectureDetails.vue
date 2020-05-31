@@ -1,10 +1,10 @@
 <template>
   <div class="lecture-holder">
-    <h6 class="lecture-name">{{lecture.name}}</h6>
+    <h6 class="lecture-name">{{name}}</h6>
     <BaseButton
       :button="button"
       :onClick="onClick"
-      :argument="lecture.id"
+      :argument="id"
       :courseId="course ? course.id : 0"
     />
   </div>
@@ -19,8 +19,12 @@ export default {
     BaseButton,
   },
   props: {
-    lecture: {
-      type: Object,
+    id: {
+      type: Number,
+      required: true,
+    },
+    name: {
+      type: String,
       required: true,
     },
     button: {

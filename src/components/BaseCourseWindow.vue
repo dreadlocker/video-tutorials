@@ -1,10 +1,10 @@
 <template>
   <div class="courses-holder">
     <div class="course-holder">
-      <img :src="course.imageUrl" class="course-image" alt="course-image">
+      <img :src="imageUrl" class="course-image" alt="course-image">
       <div class="course-info">
-        <div>{{course.title}}</div>
-        <div>{{course.description}}</div>
+        <div>{{title}}</div>
+        <div>{{description}}</div>
       </div>
     </div>
     
@@ -15,7 +15,7 @@
       <BaseButton
         :button="button"
         :onClick="onClick"
-        :argument="course.id"
+        :argument="id"
       />
     </div>
   </div>
@@ -30,8 +30,20 @@ export default {
     BaseButton,
   },
   props: {
-    course: {
-      type: Object,
+    id: {
+      type: Number,
+      required: true
+    },
+    imageUrl: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
       required: true
     },
     button: {
