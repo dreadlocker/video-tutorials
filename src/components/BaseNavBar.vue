@@ -4,12 +4,12 @@
 
     <div class="nav-bar-links-holder">
       <router-link
-        v-for="route in routes"
-        :key="route.text"
-        @click.native="route.onClick ? route.onClick() : ''"
-        :to="route.to"
+        v-for="{text, to, onClick} in routes"
+        :key="text"
+        @click.native="onClick ? onClick() : ''"
+        :to="to"
         class="nav-bar-link"
-      >{{route.text}}</router-link>
+      >{{text}}</router-link>
     </div>
   </div>
 </template>
