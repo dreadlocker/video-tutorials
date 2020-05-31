@@ -12,9 +12,10 @@
     ></iframe>
     <h3>Lectures List</h3>
     <BaseLectureDetails
-      v-for="lecture in lectures"
-      :key="lecture.id"
-      :lecture="lecture"
+      v-for="{name, id} in lectures"
+      :key="id"
+      :id="id"
+      :name="name"
       :button="playButton"
       :onClick="playCourse"
     />

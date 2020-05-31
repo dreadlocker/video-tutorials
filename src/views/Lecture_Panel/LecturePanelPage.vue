@@ -21,9 +21,10 @@
     <h2>{{lecturesInCourseText}}</h2>
     
     <BaseLectureDetails
-      v-for="lecture in lectures"
-      :key="lecture.id"
-      :lecture="lecture"
+      v-for="{name, id} in lectures"
+      :key="id"
+      :id="id"
+      :name="name"
       :button="playButton"
       :onClick="deleteLecture"
       :course="course"

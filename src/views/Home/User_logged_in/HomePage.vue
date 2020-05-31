@@ -12,9 +12,12 @@
     
     <div class="content">
       <BaseCourseWindow
-        v-for="course in courses"
-        :key="course.id"
-        :course="course"
+        v-for="{id, imageUrl, title, description} in courses"
+        :key="id"
+        :id="id"
+        :imageUrl="imageUrl"
+        :title="title"
+        :description="description"
         :button="coursesButton"
         :onClick="showCourse"
       />

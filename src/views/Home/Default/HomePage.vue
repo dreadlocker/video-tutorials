@@ -12,9 +12,12 @@
 
     <div class="content max-width">
       <BaseCourseWindow
-        v-for="course in topThreePublicCourses"
-        :key="course.id"
-        :course="course"
+        v-for="{id, imageUrl, title, description} in topThreePublicCourses"
+        :key="id"
+        :id="id"
+        :imageUrl="imageUrl"
+        :title="title"
+        :description="description"
       />
     </div>
 
